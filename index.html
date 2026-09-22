@@ -234,14 +234,132 @@ body::before {
     
 
 }
-        
+.experiences {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 30px;
+}
+
+.experiences h2 {
+    font-size: 60px;
+    margin: 0 0 60px;
+}
+
+.experience {
+    display: grid;
+    grid-template-columns: 180px 1fr 40px;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid rgba(157, 169, 156, 0.3);
+    transition: 0.3s ease;
+}
+
+.experience:last-child {
+    border-bottom: 1px solid rgba(157, 169, 156, 0.3);
+}
+
+.experience-date {
+    color: #666;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.experience-info h3 {
+    margin: 0;
+    font-size: 28px;
+    transition: 0.3s ease;
+}
+
+.experience-info p {
+    margin: 5px 0 0;
+    color: #999;
+    font-size: 15px;
+}
+
+.experience-arrow {
+    font-size: 25px;
+    color: #777;
+    transition: 0.3s ease;
+}
+
+.experience:hover {
+    padding-left: 15px;
+}
+
+.experience:hover h3 {
+    color: #9da99c;
+}
+
+.experience:hover .experience-arrow {
+    transform: translateX(8px);
+    color: #9da99c;
+}
     </style>
 
 </head>
 
 
 <body>
+    
+<section class="experiences">
 
+    <p class="section-label">ENGINEERING EXPERIENCE</p>
+
+    <h2>EXPERIENCES</h2>
+
+    <div class="experience-list">
+
+        <div class="experience">
+            <div class="experience-date">
+                MAY 2026 — PRESENT
+            </div>
+
+            <div class="experience-info">
+                <h3>Parker Aerospace</h3>
+                <p>Mechanical Engineering Intern</p>
+            </div>
+
+            <div class="experience-arrow">
+                →
+            </div>
+        </div>
+
+        <div class="experience">
+            <div class="experience-date">
+                SEPT 2025 — PRESENT
+            </div>
+
+            <div class="experience-info">
+                <h3>NASA Space Grant Consortium</h3>
+                <p>Intern Advisor & Researcher</p>
+            </div>
+
+            <div class="experience-arrow">
+                →
+            </div>
+        </div>
+
+        <div class="experience">
+            <div class="experience-date">
+                MAY 2025 — SEPT 2025
+            </div>
+
+            <div class="experience-info">
+                <h3>SafeWater LLC</h3>
+                <p>Mechanical Engineering Intern</p>
+            </div>
+
+            <div class="experience-arrow">
+                →
+            </div>
+        </div>
+
+    </div>
+
+</section>
+    
     <section class="intro">
 
         <p>MECHANICAL ENGINEERING</p>
