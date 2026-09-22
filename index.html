@@ -85,7 +85,154 @@ body::before {
             font-weight: normal;
             color: #aaa;
         }
+        
+/* =========================
+   PROJECTS SECTION
+   ========================= */
 
+.projects {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 120px 30px;
+
+}
+
+
+/* Small heading */
+
+.section-label {
+
+    color: #9da99c;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Main heading */
+
+.projects h2 {
+
+    font-size: 60px;
+
+    margin: 0 0 60px;
+
+}
+
+
+/* Project list */
+
+.project {
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 40px;
+
+    align-items: center;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(157, 169, 156, 0.3);
+
+    transition: 0.3s ease;
+
+}
+
+
+/* Last project gets bottom border */
+
+.project:last-child {
+
+    border-bottom: 1px solid rgba(157, 169, 156, 0.3);
+
+}
+
+
+/* Project number */
+
+.project-number {
+
+    color: #666;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+}
+
+
+/* Project title */
+
+.project-info h3 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    transition: 0.3s ease;
+
+}
+
+
+/* Project description */
+
+.project-info p {
+
+    margin: 5px 0 0;
+
+    color: #999;
+
+    font-size: 15px;
+
+}
+
+
+/* Arrow */
+
+.project-arrow {
+
+    font-size: 25px;
+
+    color: #777;
+
+    transition: 0.3s ease;
+
+}
+
+
+/* Hover effect */
+
+.project:hover {
+
+    padding-left: 15px;
+
+}
+
+
+.project:hover h3 {
+
+    color: #9da99c;
+
+}
+
+
+.project:hover .project-arrow {
+
+    transform: translateX(8px);
+
+    color: #9da99c;
+
+}
     </style>
 
 </head>
@@ -106,7 +253,117 @@ body::before {
         </h2>
 
     </section>
+    
+<!-- PROJECTS SECTION -->
 
+<section class="projects">
+
+    <p class="section-label">SELECTED WORK</p>
+
+    <h2>PROJECTS</h2>
+
+
+    <div class="project-list">
+
+        <!-- Project 1 -->
+        <div class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div class="project-info">
+
+                <h3>Rocket Lab</h3>
+
+                <p>
+                    Focal Plane Characterization Platform
+                </p>
+
+            </div>
+
+            <div class="project-arrow">
+                →
+            </div>
+
+        </div>
+
+
+        <!-- Project 2 -->
+        <div class="project">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <div class="project-info">
+
+                <h3>NASA Space Grant</h3>
+
+                <p>
+                    Topology Optimization + Machine Learning
+                </p>
+
+            </div>
+
+            <div class="project-arrow">
+                →
+            </div>
+
+        </div>
+
+
+        <!-- Project 3 -->
+        <div class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div class="project-info">
+
+                <h3>Home Security Robot</h3>
+
+                <p>
+                    Mechanical Design + Autonomous Systems
+                </p>
+
+            </div>
+
+            <div class="project-arrow">
+                →
+            </div>
+
+        </div>
+
+
+        <!-- Project 4 -->
+        <div class="project">
+
+            <div class="project-number">
+                04
+            </div>
+
+            <div class="project-info">
+
+                <h3>Tacoma Narrows</h3>
+
+                <p>
+                    MATLAB Flutter Simulation
+                </p>
+
+            </div>
+
+            <div class="project-arrow">
+                →
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    
 </body>
 
 </html>
