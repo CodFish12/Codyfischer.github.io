@@ -9,52 +9,63 @@
 
     <style>
 
-        /* Page setup */
+        /* =========================
+           PAGE SETUP
+           ========================= */
+
         body {
             margin: 0;
             background: #111;
             color: white;
             font-family: Arial, sans-serif;
-
             position: relative;
         }
-/* Topographic contour lines */
 
-body::before {
-    content: "";
 
-    position: fixed;
-    top: 0;
-    left: 0;
+        /* =========================
+           TOPOGRAPHIC CONTOUR LINES
+           ========================= */
 
-    width: 100%;
-    height: 100%;
+        body::before {
+            content: "";
 
-    z-index: -1;
+            position: fixed;
+            top: 0;
+            left: 0;
 
-    opacity: 0.25;
+            width: 100%;
+            height: 100%;
 
-    background-image:
-        repeating-radial-gradient(
-            ellipse at 20% 30%,
-            transparent 0px,
-            transparent 35px,
-            #9da99c 37px,
-            transparent 40px,
-            transparent 75px
-        ),
-        repeating-radial-gradient(
-            ellipse at 80% 70%,
-            transparent 0px,
-            transparent 50px,
-            #9da99c 52px,
-            transparent 55px,
-            transparent 100px
-        );
+            z-index: -1;
 
-    pointer-events: none;
-}
-        /* Introduction section */
+            opacity: 0.25;
+
+            background-image:
+                repeating-radial-gradient(
+                    ellipse at 20% 30%,
+                    transparent 0px,
+                    transparent 35px,
+                    #9da99c 37px,
+                    transparent 40px,
+                    transparent 75px
+                ),
+                repeating-radial-gradient(
+                    ellipse at 80% 70%,
+                    transparent 0px,
+                    transparent 50px,
+                    #9da99c 52px,
+                    transparent 55px,
+                    transparent 100px
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           INTRODUCTION SECTION
+           ========================= */
+
         .intro {
             height: 100vh;
 
@@ -66,300 +77,290 @@ body::before {
             text-align: center;
         }
 
+
         /* Small heading */
+
         .intro p {
             color: #9da99c;
             letter-spacing: 4px;
             font-size: 14px;
         }
 
+
         /* Your name */
+
         .intro h1 {
             font-size: 80px;
             margin: 15px 0;
+            transition: 0.3s ease;
         }
 
+
+        /* Name hover */
+
+        .intro h1:hover {
+            letter-spacing: 8px;
+            color: #9da99c;
+        }
+
+
         /* Description */
+
         .intro h2 {
             font-size: 20px;
             font-weight: normal;
             color: #aaa;
         }
-        
-/* =========================
-   PROJECTS SECTION
-   ========================= */
 
-.projects {
 
-    position: relative;
-    z-index: 1;
+        /* =========================
+           EXPERIENCES SECTION
+           ========================= */
 
-    max-width: 1000px;
+        .experiences {
+            position: relative;
+            z-index: 1;
 
-    margin: 0 auto;
+            max-width: 1000px;
 
-    padding: 120px 30px;
+            margin: 0 auto;
 
-}
+            padding: 120px 30px;
+        }
 
 
-/* Small heading */
+        /* Small heading */
 
-.section-label {
+        .section-label {
+            color: #9da99c;
 
-    color: #9da99c;
+            letter-spacing: 4px;
 
-    letter-spacing: 4px;
+            font-size: 12px;
 
-    font-size: 12px;
+            margin-bottom: 10px;
+        }
 
-    margin-bottom: 10px;
 
-}
+        /* Main heading */
 
+        .experiences h2 {
+            font-size: 60px;
 
-/* Main heading */
+            margin: 0 0 60px;
+        }
 
-.projects h2 {
 
-    font-size: 60px;
+        /* Experience list */
 
-    margin: 0 0 60px;
+        .experience {
+            display: grid;
 
-}
+            grid-template-columns: 180px 1fr 40px;
 
+            align-items: center;
 
-/* Project list */
+            padding: 30px 0;
 
-.project {
+            border-top: 1px solid rgba(157, 169, 156, 0.3);
 
-    display: grid;
+            transition: 0.3s ease;
+        }
 
-    grid-template-columns: 80px 1fr 40px;
 
-    align-items: center;
+        /* Last experience gets bottom border */
 
-    padding: 30px 0;
+        .experience:last-child {
+            border-bottom: 1px solid rgba(157, 169, 156, 0.3);
+        }
 
-    border-top: 1px solid rgba(157, 169, 156, 0.3);
 
-    transition: 0.3s ease;
+        /* Experience date */
 
-}
+        .experience-date {
+            color: #666;
 
+            font-family: monospace;
 
-/* Last project gets bottom border */
+            font-size: 13px;
+        }
 
-.project:last-child {
 
-    border-bottom: 1px solid rgba(157, 169, 156, 0.3);
+        /* Experience title */
 
-}
+        .experience-info h3 {
+            margin: 0;
 
+            font-size: 28px;
 
-/* Project number */
+            transition: 0.3s ease;
+        }
 
-.project-number {
 
-    color: #666;
+        /* Experience description */
 
-    font-family: monospace;
+        .experience-info p {
+            margin: 5px 0 0;
 
-    font-size: 14px;
+            color: #999;
 
-}
+            font-size: 15px;
+        }
 
 
-/* Project title */
+        /* Experience arrow */
 
-.project-info h3 {
+        .experience-arrow {
+            font-size: 25px;
 
-    margin: 0;
+            color: #777;
 
-    font-size: 28px;
+            transition: 0.3s ease;
+        }
 
-    transition: 0.3s ease;
 
-}
+        /* Experience hover */
 
+        .experience:hover {
+            padding-left: 15px;
+        }
 
-/* Project description */
 
-.project-info p {
+        .experience:hover h3 {
+            color: #9da99c;
+        }
 
-    margin: 5px 0 0;
 
-    color: #999;
+        .experience:hover .experience-arrow {
+            transform: translateX(8px);
 
-    font-size: 15px;
+            color: #9da99c;
+        }
 
-}
 
+        /* =========================
+           PROJECTS SECTION
+           ========================= */
 
-/* Arrow */
+        .projects {
+            position: relative;
+            z-index: 1;
 
-.project-arrow {
+            max-width: 1000px;
 
-    font-size: 25px;
+            margin: 0 auto;
 
-    color: #777;
+            padding: 120px 30px;
+        }
 
-    transition: 0.3s ease;
 
-}
+        /* Main heading */
 
+        .projects h2 {
+            font-size: 60px;
 
-/* Hover effect */
+            margin: 0 0 60px;
+        }
 
-.project:hover {
 
-    padding-left: 15px;
+        /* Project list */
 
-}
+        .project {
+            display: grid;
 
+            grid-template-columns: 80px 1fr 40px;
 
-.project:hover h3 {
+            align-items: center;
 
-    color: #9da99c;
+            padding: 30px 0;
 
-}
+            border-top: 1px solid rgba(157, 169, 156, 0.3);
 
+            transition: 0.3s ease;
+        }
 
-.project:hover .project-arrow {
 
-    transform: translateX(8px);
+        /* Last project gets bottom border */
 
-    color: #9da99c;
-    
+        .project:last-child {
+            border-bottom: 1px solid rgba(157, 169, 156, 0.3);
+        }
 
-}
-.experiences {
-    position: relative;
-    z-index: 1;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 120px 30px;
-}
 
-.experiences h2 {
-    font-size: 60px;
-    margin: 0 0 60px;
-}
+        /* Project number */
 
-.experience {
-    display: grid;
-    grid-template-columns: 180px 1fr 40px;
-    align-items: center;
-    padding: 30px 0;
-    border-top: 1px solid rgba(157, 169, 156, 0.3);
-    transition: 0.3s ease;
-}
+        .project-number {
+            color: #666;
 
-.experience:last-child {
-    border-bottom: 1px solid rgba(157, 169, 156, 0.3);
-}
+            font-family: monospace;
 
-.experience-date {
-    color: #666;
-    font-family: monospace;
-    font-size: 13px;
-}
+            font-size: 14px;
+        }
 
-.experience-info h3 {
-    margin: 0;
-    font-size: 28px;
-    transition: 0.3s ease;
-}
 
-.experience-info p {
-    margin: 5px 0 0;
-    color: #999;
-    font-size: 15px;
-}
+        /* Project title */
 
-.experience-arrow {
-    font-size: 25px;
-    color: #777;
-    transition: 0.3s ease;
-}
+        .project-info h3 {
+            margin: 0;
 
-.experience:hover {
-    padding-left: 15px;
-}
+            font-size: 28px;
 
-.experience:hover h3 {
-    color: #9da99c;
-}
+            transition: 0.3s ease;
+        }
 
-.experience:hover .experience-arrow {
-    transform: translateX(8px);
-    color: #9da99c;
-}
+
+        /* Project description */
+
+        .project-info p {
+            margin: 5px 0 0;
+
+            color: #999;
+
+            font-size: 15px;
+        }
+
+
+        /* Project arrow */
+
+        .project-arrow {
+            font-size: 25px;
+
+            color: #777;
+
+            transition: 0.3s ease;
+        }
+
+
+        /* Project hover */
+
+        .project:hover {
+            padding-left: 15px;
+        }
+
+
+        .project:hover h3 {
+            color: #9da99c;
+        }
+
+
+        .project:hover .project-arrow {
+            transform: translateX(8px);
+
+            color: #9da99c;
+        }
+
     </style>
 
 </head>
 
 
 <body>
-    
-<section class="experiences">
 
-    <p class="section-label">ENGINEERING EXPERIENCE</p>
 
-    <h2>EXPERIENCES</h2>
+    <!-- =========================
+         INTRO
+         ========================= -->
 
-    <div class="experience-list">
-
-        <div class="experience">
-            <div class="experience-date">
-                MAY 2026 — PRESENT
-            </div>
-
-            <div class="experience-info">
-                <h3>Parker Aerospace</h3>
-                <p>Mechanical Engineering Intern</p>
-            </div>
-
-            <div class="experience-arrow">
-                →
-            </div>
-        </div>
-
-        <div class="experience">
-            <div class="experience-date">
-                SEPT 2025 — PRESENT
-            </div>
-
-            <div class="experience-info">
-                <h3>NASA Space Grant Consortium</h3>
-                <p>Intern Advisor & Researcher</p>
-            </div>
-
-            <div class="experience-arrow">
-                →
-            </div>
-        </div>
-
-        <div class="experience">
-            <div class="experience-date">
-                MAY 2025 — SEPT 2025
-            </div>
-
-            <div class="experience-info">
-                <h3>SafeWater LLC</h3>
-                <p>Mechanical Engineering Intern</p>
-            </div>
-
-            <div class="experience-arrow">
-                →
-            </div>
-        </div>
-
-    </div>
-
-</section>
-    
     <section class="intro">
 
         <p>MECHANICAL ENGINEERING</p>
@@ -373,93 +374,205 @@ body::before {
         </h2>
 
     </section>
-    
-<!-- PROJECTS SECTION -->
-
-<section class="projects">
-
-    <p class="section-label">SELECTED WORK</p>
-
-    <h2>PROJECTS</h2>
 
 
-    <div class="project-list">
+    <!-- =========================
+         EXPERIENCES
+         ========================= -->
 
-        <!-- Project 1 -->
-        <div class="project">
+    <section class="experiences">
 
-            <div class="project-number">
-                01
+        <p class="section-label">ENGINEERING EXPERIENCE</p>
+
+        <h2>EXPERIENCES</h2>
+
+        <div class="experience-list">
+
+
+            <!-- Parker Aerospace -->
+
+            <div class="experience">
+
+                <div class="experience-date">
+                    MAY 2026 — PRESENT
+                </div>
+
+                <div class="experience-info">
+
+                    <h3>Parker Aerospace</h3>
+
+                    <p>
+                        Mechanical Engineering Intern
+                    </p>
+
+                </div>
+
+                <div class="experience-arrow">
+                    →
+                </div>
+
             </div>
 
-            <div class="project-info">
 
-                <h3>Rocket Lab</h3>
+            <!-- NASA Space Grant -->
 
-                <p>
-                    Focal Plane Characterization Platform
-                </p>
+            <div class="experience">
+
+                <div class="experience-date">
+                    SEPT 2025 — PRESENT
+                </div>
+
+                <div class="experience-info">
+
+                    <h3>NASA Space Grant Consortium</h3>
+
+                    <p>
+                        Intern Advisor & Researcher
+                    </p>
+
+                </div>
+
+                <div class="experience-arrow">
+                    →
+                </div>
 
             </div>
 
-            <div class="project-arrow">
-                →
+
+            <!-- SafeWater -->
+
+            <div class="experience">
+
+                <div class="experience-date">
+                    MAY 2025 — SEPT 2025
+                </div>
+
+                <div class="experience-info">
+
+                    <h3>SafeWater LLC</h3>
+
+                    <p>
+                        Mechanical Engineering Intern
+                    </p>
+
+                </div>
+
+                <div class="experience-arrow">
+                    →
+                </div>
+
             </div>
+
 
         </div>
-        
-        <!-- Project 2 -->
-        <div class="project">
 
-            <div class="project-number">
-                02
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+
+    <section class="projects">
+
+        <p class="section-label">
+            SELECTED WORK
+        </p>
+
+        <h2>
+            PROJECTS
+        </h2>
+
+
+        <div class="project-list">
+
+
+            <!-- Project 1 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        Rocket Lab
+                    </h3>
+
+                    <p>
+                        Focal Plane Characterization Platform
+                    </p>
+
+                </div>
+
+                <div class="project-arrow">
+                    →
+                </div>
+
             </div>
 
-            <div class="project-info">
 
-                <h3>Home Security Robot</h3>
+            <!-- Project 2 -->
 
-                <p>
-                    Mechanical Design + Autonomous Systems
-                </p>
+            <div class="project">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        Home Security Robot
+                    </h3>
+
+                    <p>
+                        Mechanical Design + Autonomous Systems
+                    </p>
+
+                </div>
+
+                <div class="project-arrow">
+                    →
+                </div>
 
             </div>
 
-            <div class="project-arrow">
-                →
+
+            <!-- Project 3 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        Tacoma Narrows
+                    </h3>
+
+                    <p>
+                        MATLAB Flutter Simulation
+                    </p>
+
+                </div>
+
+                <div class="project-arrow">
+                    →
+                </div>
+
             </div>
+
 
         </div>
 
+    </section>
 
-        <!-- Project 3 -->
-        <div class="project">
 
-            <div class="project-number">
-                03
-            </div>
-
-            <div class="project-info">
-
-                <h3>Tacoma Narrows</h3>
-
-                <p>
-                    MATLAB Flutter Simulation
-                </p>
-                
-            </div>
-
-            <div class="project-arrow">
-                →
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</section>
 </body>
 
 </html>
