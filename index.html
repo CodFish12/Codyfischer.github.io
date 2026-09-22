@@ -16,7 +16,42 @@
             color: white;
             font-family: Arial, sans-serif;
         }
+/* Topographic contour lines */
 
+body::before {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    opacity: 0.25;
+
+    background-image:
+        repeating-radial-gradient(
+            ellipse at 20% 30%,
+            transparent 0px,
+            transparent 35px,
+            #9da99c 37px,
+            transparent 40px,
+            transparent 75px
+        ),
+        repeating-radial-gradient(
+            ellipse at 80% 70%,
+            transparent 0px,
+            transparent 50px,
+            #9da99c 52px,
+            transparent 55px,
+            transparent 100px
+        );
+
+    pointer-events: none;
+}
         /* Introduction section */
         .intro {
             height: 100vh;
