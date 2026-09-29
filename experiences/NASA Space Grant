@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>NASA Space Grant | Cody Fischer</title>
+
+<style>
+
+    /* =========================
+       PAGE SETUP
+       ========================= */
+
+    body {
+        margin: 0;
+        background: #111;
+        color: white;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+
+
+    /* =========================
+       TOPOGRAPHIC CONTOUR LINES
+       ========================= */
+
+    body::before {
+        content: "";
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        z-index: -1;
+
+        opacity: 0.25;
+
+        background-image:
+            repeating-radial-gradient(
+                ellipse at 20% 30%,
+                transparent 0px,
+                transparent 35px,
+                #9da99c 37px,
+                transparent 40px,
+                transparent 75px
+            ),
+            repeating-radial-gradient(
+                ellipse at 80% 70%,
+                transparent 0px,
+                transparent 50px,
+                #9da99c 52px,
+                transparent 55px,
+                transparent 100px
+            );
+
+        pointer-events: none;
+    }
+
+
+    /* =========================
+       BACK LINK
+       ========================= */
+
+    .back-link {
+        display: inline-block;
+
+        margin: 40px 50px;
+
+        color: #777;
+
+        text-decoration: none;
+
+        font-family: monospace;
+
+        font-size: 13px;
+
+        letter-spacing: 1px;
+
+        transition: 0.3s ease;
+    }
+
+
+    .back-link:hover {
+        color: #9da99c;
+
+        transform: translateX(-5px);
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+        max-width: 1000px;
+
+        margin: 80px auto 0;
+
+        padding: 0 30px 120px;
+    }
+
+
+    .section-label {
+        color: #9da99c;
+
+        letter-spacing: 4px;
+
+        font-size: 12px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero h1 {
+        font-size: 72px;
+
+        margin: 0 0 20px;
+
+        line-height: 1;
+
+        transition: 0.3s ease;
+    }
+
+
+    .hero h1:hover {
+        letter-spacing: 4px;
+
+        color: #9da99c;
+    }
+
+
+    .hero-subtitle {
+        font-size: 22px;
+
+        color: #aaa;
+
+        margin: 0 0 15px;
+    }
+
+
+    .hero-date {
+        color: #666;
+
+        font-family: monospace;
+
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       CONTENT
+       ========================= */
+
+    .content {
+        max-width: 1000px;
+
+        margin: 0 auto;
+
+        padding: 0 30px 120px;
+    }
+
+
+    .content-section {
+        padding: 70px 0;
+
+        border-top: 1px solid rgba(157, 169, 156, 0.3);
+    }
+
+
+    .content-section h2 {
+        font-size: 42px;
+
+        margin: 0 0 30px;
+    }
+
+
+    .content-section h3 {
+        font-size: 25px;
+
+        margin: 45px 0 10px;
+
+        transition: 0.3s ease;
+    }
+
+
+    .content-section h3:hover {
+        color: #9da99c;
+    }
+
+
+    .content-section p {
+        max-width: 800px;
+
+        color: #999;
+
+        font-size: 17px;
+
+        line-height: 1.7;
+
+        margin: 0 0 20px;
+    }
+
+
+    /* =========================
+       RESEARCH WORK
+       ========================= */
+
+    .work-item {
+        display: grid;
+
+        grid-template-columns: 50px 1fr;
+
+        gap: 20px;
+
+        padding: 25px 0;
+
+        border-top: 1px solid rgba(157, 169, 156, 0.15);
+    }
+
+
+    .work-number {
+        color: #666;
+
+        font-family: monospace;
+
+        font-size: 14px;
+    }
+
+
+    .work-item h3 {
+        margin: 0 0 8px;
+
+        font-size: 23px;
+    }
+
+
+    .work-item p {
+        margin: 0;
+
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       FEATURED RESEARCH
+       ========================= */
+
+    .featured {
+        margin-top: 40px;
+
+        padding: 35px;
+
+        border: 1px solid rgba(157, 169, 156, 0.3);
+
+        transition: 0.3s ease;
+    }
+
+
+    .featured:hover {
+        border-color: rgba(157, 169, 156, 0.7);
+
+        transform: translateX(5px);
+    }
+
+
+    .featured h3 {
+        margin: 0 0 10px;
+
+        font-size: 28px;
+    }
+
+
+    .featured p {
+        margin-bottom: 15px;
+    }
+
+
+    .research-tools {
+        color: #9da99c !important;
+
+        font-family: monospace;
+
+        font-size: 14px !important;
+
+        margin-top: 25px !important;
+    }
+
+
+    /* =========================
+       SKILLS
+       ========================= */
+
+    .skills {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-top: 25px;
+    }
+
+
+    .skill {
+        border: 1px solid rgba(157, 169, 156, 0.3);
+
+        padding: 10px 15px;
+
+        color: #999;
+
+        font-family: monospace;
+
+        font-size: 13px;
+
+        transition: 0.3s ease;
+    }
+
+
+    .skill:hover {
+        color: #9da99c;
+
+        border-color: #9da99c;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+        .back-link {
+            margin: 30px 25px;
+        }
+
+        .hero {
+            margin-top: 50px;
+
+            padding: 0 25px 80px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 0 25px 80px;
+        }
+
+        .content-section h2 {
+            font-size: 34px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     BACK TO PORTFOLIO
+     ========================= -->
+
+<a href="../index.html" class="back-link">
+    ← BACK TO PORTFOLIO
+</a>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+    <p class="section-label">
+        RESEARCH EXPERIENCE
+    </p>
+
+    <h1>
+        NASA SPACE GRANT
+    </h1>
+
+    <p class="hero-subtitle">
+        Intern Advisor & Undergraduate Researcher
+    </p>
+
+    <p class="hero-date">
+        SEPTEMBER 2025 — PRESENT
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CONTENT
+     ========================= -->
+
+<main class="content">
+
+
+    <!-- =========================
+         OVERVIEW
+         ========================= -->
+
+    <section class="content-section">
+
+        <p class="section-label">
+            01 / OVERVIEW
+        </p>
+
+        <h2>
+            Research & Engineering
+        </h2>
+
+        <p>
+            Through the University of Arizona NASA Space Grant Consortium,
+            I work alongside faculty researchers on projects involving
+            planetary science, computational analysis, and advanced
+            aerospace manufacturing.
+        </p>
+
+        <p>
+            In addition to conducting research, I serve as an Intern
+            Advisor, helping undergraduate research interns navigate
+            research expectations, professional development, and the
+            challenges that come with entering technical research.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CURRENT PROJECT
+         ========================= -->
+
+    <section class="content-section">
+
+        <p class="section-label">
+            02 / CURRENT RESEARCH
+        </p>
+
+        <h2>
+            AI-Assisted Aerospace Design
+        </h2>
+
+        <div class="featured">
+
+            <h3>
+                Machine Learning + Topology Optimization
+            </h3>
+
+            <p>
+                My current research focuses on combining machine learning
+                with topology optimization to investigate new approaches
+                to aerospace component design and additive manufacturing.
+            </p>
+
+            <p>
+                I am developing a proof-of-concept workflow using
+                generative models to produce two-dimensional structures
+                designed around laser powder bed fusion (LPBF)
+                manufacturability constraints. The generated structures
+                are then evaluated through engineering simulations to
+                investigate their structural performance and
+                manufacturability.
+            </p>
+
+            <p>
+                I use ANSYS to simulate the generated structures and
+                compare their structural behavior against predictions
+                from the machine-learning model. The goal is to evaluate
+                whether the model can effectively act as a surrogate for
+                portions of the traditional optimization and analysis
+                process.
+            </p>
+
+            <p class="research-tools">
+                TOOLS: MACHINE LEARNING · TOPOLOGY OPTIMIZATION · ANSYS ·
+                LPBF · PYTHON
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MARS PROJECT
+         ========================= -->
+
+    <section class="content-section">
+
+        <p class="section-label">
+            03 / PREVIOUS RESEARCH
+        </p>
+
+        <h2>
+            Mars Crustal Magnetic Fields
+        </h2>
+
+        <div class="featured">
+
+            <h3>
+                MAVEN Magnetometer Data Analysis
+            </h3>
+
+            <p>
+                During the previous academic year, I worked with Dr. Lon
+                Hood on research investigating the magnetic environment
+                of Mars using data collected by NASA's Mars Atmosphere
+                and Volatile EvolutioN (MAVEN) spacecraft.
+            </p>
+
+            <p>
+                I worked with approximately eight years of raw
+                magnetometer data, focusing on spacecraft passes through
+                the Martian periapsis region below approximately 170 km
+                altitude. The objective was to characterize crustal
+                magnetic fields and investigate their relationship to
+                the history of Mars' planetary dynamo and the evolution
+                of its atmospheric shielding.
+            </p>
+
+            <p>
+                I developed quality-control plots and Mercator projection
+                maps to process and visualize the magnetic-field data.
+                The work required handling large scientific datasets and
+                working with research computing environments through
+                Bash and SSH.
+            </p>
+
+            <p>
+                I also worked with legacy scientific software and
+                programming tools including Fortran, IDL, and
+                SuperMongo to process, analyze, and visualize the
+                research data.
+            </p>
+
+            <p class="research-tools">
+                TOOLS: MAVEN · FORTRAN · BASH · SSH · IDL · SUPER MONGO ·
+                SCIENTIFIC DATA ANALYSIS
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ADVISOR ROLE
+         ========================= -->
+
+    <section class="content-section">
+
+        <p class="section-label">
+            04 / INTERN ADVISOR
+        </p>
+
+        <h2>
+            Supporting Other Researchers
+        </h2>
+
+        <div class="work-item">
+
+            <div class="work-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    Research Guidance
+                </h3>
+
+                <p>
+                    Help undergraduate research interns understand
+                    research expectations, develop professional habits,
+                    and navigate the process of working with faculty
+                    mentors and research teams.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work-item">
+
+            <div class="work-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Professional Development
+                </h3>
+
+                <p>
+                    Help students develop confidence in technical
+                    environments and work through challenges associated
+                    with entering engineering and scientific research.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="work-item">
+
+            <div class="work-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Science Communication
+                </h3>
+
+                <p>
+                    Help bridge the gap between technical research and
+                    clear communication by encouraging students to
+                    explain their work effectively to both technical and
+                    non-technical audiences.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+         ========================= -->
+
+    <section class="content-section">
+
+        <p class="section-label">
+            05 / TOOLS & SKILLS
+        </p>
+
+        <h2>
+            Research Toolkit
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">ANSYS</div>
+
+            <div class="skill">Topology Optimization</div>
+
+            <div class="skill">Machine Learning</div>
+
+            <div class="skill">LPBF</div>
+
+            <div class="skill">Fortran</div>
+
+            <div class="skill">Bash</div>
+
+            <div class="skill">SSH</div>
+
+            <div class="skill">IDL</div>
+
+            <div class="skill">SuperMongo</div>
+
+            <div class="skill">Scientific Computing</div>
+
+            <div class="skill">Data Analysis</div>
+
+            <div class="skill">Data Visualization</div>
+
+        </div>
+
+    </section>
+
+
+</main>
+```
+
+</body>
+
+</html>
