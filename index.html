@@ -361,7 +361,86 @@
 
             color: #9da99c;
         }
+/* PERSONAL */
 
+.personal {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 30px;
+}
+
+.personal h2 {
+    font-size: 60px;
+    margin: 0 0 60px;
+}
+
+.personal-intro {
+    max-width: 750px;
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.personal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.personal-card {
+    border: 1px solid rgba(157,169,156,0.3);
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.personal-card:hover {
+    border-color: rgba(157,169,156,0.7);
+    transform: translateY(-4px);
+}
+
+.personal-card h3 {
+    margin: 0 0 12px;
+    font-size: 25px;
+    transition: 0.3s ease;
+}
+
+.personal-card:hover h3 {
+    color: #9da99c;
+}
+
+.personal-card p {
+    margin: 0;
+    color: #999;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.personal-tag {
+    display: block;
+    color: #666;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+
+    .personal {
+        padding: 80px 20px;
+    }
+
+    .personal h2 {
+        font-size: 42px;
+    }
+
+    .personal-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 
 </head>
@@ -575,7 +654,133 @@
         </div>
 
     </section>
+<section class="personal">
 
+    <div class="section-label">
+        PERSONAL
+    </div>
+
+    <h2>Outside Engineering</h2>
+
+    <p class="personal-intro">
+        Engineering is a big part of what I do, but it is not the only thing
+        I care about. Most of the things I enjoy outside of school and work
+        have the same thing in common: I like building, solving problems,
+        getting outside, and figuring things out for myself.
+    </p>
+
+    <div class="personal-grid">
+
+        <div class="personal-card">
+
+            <span class="personal-tag">
+                CLIMBING
+            </span>
+
+            <h3>Rock Climbing</h3>
+
+            <p>
+                My favorite way to spend a day off. I like climbing because
+                every problem is different. It is part physical, part
+                technical, and a lot of figuring out what the hell the route
+                setter was thinking.
+            </p>
+
+        </div>
+
+
+        <div class="personal-card">
+
+            <span class="personal-tag">
+                POWERLIFTING
+            </span>
+
+            <h3>Powerlifting</h3>
+
+            <p>
+                I got into powerlifting because I like having something
+                measurable to work toward. Training has taught me a lot about
+                consistency, discipline, and being willing to put in the work
+                when progress is slow.
+            </p>
+
+        </div>
+
+
+        <div class="personal-card">
+
+            <span class="personal-tag">
+                BBQ · COOKING
+            </span>
+
+            <h3>Cooking & BBQ</h3>
+
+            <p>
+                I spend a lot of my free time cooking, experimenting with BBQ,
+                and trying to make things better than the last time. There is
+                something satisfying about taking raw ingredients, changing
+                variables, and seeing what comes out the other side.
+            </p>
+
+        </div>
+
+
+        <div class="personal-card">
+
+            <span class="personal-tag">
+                PHOTOGRAPHY
+            </span>
+
+            <h3>Photography</h3>
+
+            <p>
+                I enjoy photography as a way to slow down and pay attention
+                to things I would normally walk past. I especially like
+                landscapes, machines, and the kind of details that usually
+                get overlooked.
+            </p>
+
+        </div>
+
+
+        <div class="personal-card">
+
+            <span class="personal-tag">
+                OUTDOORS
+            </span>
+
+            <h3>Hiking & Camping</h3>
+
+            <p>
+                When I am not in the shop, lab, or gym, I would rather be
+                outside. Hiking and camping are my excuse to get away from a
+                screen and spend some time somewhere that is not surrounded
+                by concrete.
+            </p>
+
+        </div>
+
+
+        <div class="personal-card">
+
+            <span class="personal-tag">
+                PROJECTS
+            </span>
+
+            <h3>Old Vehicles</h3>
+
+            <p>
+                I have a soft spot for old machines. My 1981 Ford Bronco
+                restoration has been one of those projects where the solution
+                is rarely obvious, the parts are rarely convenient, and
+                getting something working again is half the fun.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 
