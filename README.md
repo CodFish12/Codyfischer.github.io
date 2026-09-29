@@ -1,2 +1,3 @@
 # Codyfischer.github.io
-Senior MechE @ University of Arizona | MechE Intern @ Parker Aerospace
+
+This repository will serve as my personal story book for all my experiences: whether it's professional, educational, or just hobbies and fun things I want to documen
