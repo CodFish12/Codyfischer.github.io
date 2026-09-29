@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tacoma Narrows Bridge | Cody Fischer</title>
+
+<style>
+
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* TOPOGRAPHIC BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.25;
+
+    background-image:
+        repeating-radial-gradient(
+            ellipse at 20% 30%,
+            transparent 0px,
+            transparent 35px,
+            #9da99c 37px,
+            transparent 40px,
+            transparent 75px
+        ),
+        repeating-radial-gradient(
+            ellipse at 80% 70%,
+            transparent 0px,
+            transparent 50px,
+            #9da99c 52px,
+            transparent 55px,
+            transparent 100px
+        );
+
+    pointer-events: none;
+}
+
+/* PAGE */
+
+.project-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 30px 120px;
+}
+
+/* BACK LINK */
+
+.back-link {
+    display: inline-block;
+    color: #777;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 90px;
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    color: #9da99c;
+    transform: translateX(-5px);
+}
+
+/* HERO */
+
+.hero {
+    margin-bottom: 120px;
+}
+
+.hero-label {
+    color: #9da99c;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 78px;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #aaa;
+    margin: 20px 0 15px;
+}
+
+.hero-date {
+    color: #666;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* SECTIONS */
+
+.section {
+    margin-bottom: 110px;
+}
+
+.section-label {
+    color: #9da99c;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.section h2 {
+    font-size: 48px;
+    margin: 0 0 35px;
+}
+
+.section p {
+    max-width: 850px;
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* FEATURED ANALYSIS */
+
+.featured {
+    border-top: 1px solid rgba(157,169,156,0.3);
+    border-bottom: 1px solid rgba(157,169,156,0.3);
+    padding: 45px 0;
+    margin-top: 30px;
+}
+
+.featured h3 {
+    font-size: 32px;
+    margin: 0 0 20px;
+}
+
+.featured p {
+    margin-bottom: 30px;
+}
+
+/* DETAIL GRID */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.detail-box {
+    border: 1px solid rgba(157,169,156,0.25);
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.detail-box:hover {
+    border-color: rgba(157,169,156,0.7);
+    transform: translateY(-3px);
+}
+
+.detail-box h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.detail-box p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ANALYSIS PROCESS */
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.process-step {
+    border-top: 2px solid #9da99c;
+    padding-top: 20px;
+}
+
+.process-number {
+    color: #666;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.process-step h3 {
+    font-size: 19px;
+    margin: 12px 0 10px;
+}
+
+.process-step p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* RESULT */
+
+.result {
+    margin-top: 40px;
+    border: 1px solid rgba(157,169,156,0.35);
+    padding: 45px;
+}
+
+.result-number {
+    color: #9da99c;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.result h3 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.result p {
+    margin: 0;
+}
+
+/* SKILLS */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.skill {
+    border: 1px solid rgba(157,169,156,0.35);
+    padding: 10px 15px;
+    color: #aaa;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.skill:hover {
+    color: #9da99c;
+    border-color: #9da99c;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 120px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(157,169,156,0.3);
+}
+
+.footer a {
+    color: #777;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.footer a:hover {
+    color: #9da99c;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .project-page {
+        padding: 30px 20px 80px;
+    }
+
+    .back-link {
+        margin-bottom: 60px;
+    }
+
+    .hero {
+        margin-bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .section {
+        margin-bottom: 80px;
+    }
+
+    .section h2 {
+        font-size: 36px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .result {
+        padding: 30px;
+    }
+
+    .result h3 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .process {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="project-page">
+
+    <a href="../index.html" class="back-link">
+        ← BACK TO PORTFOLIO
+    </a>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-label">
+            ENGINEERING ANALYSIS · MATLAB
+        </div>
+
+        <h1>TACOMA NARROWS</h1>
+
+        <h2>
+            Aeroelastic Flutter Simulation
+        </h2>
+
+        <div class="hero-date">
+            UNIVERSITY OF ARIZONA
+        </div>
+
+    </section>
+
+
+    <!-- OVERVIEW -->
+
+    <section class="section">
+
+        <div class="section-label">
+            01 · OVERVIEW
+        </div>
+
+        <h2>Modeling a Bridge Collapse</h2>
+
+        <p>
+            This project used MATLAB to model the aeroelastic flutter behavior
+            of the Tacoma Narrows Bridge and investigate the wind conditions
+            associated with its eventual collapse.
+        </p>
+
+        <p>
+            The goal was to take a real engineering failure and build a
+            mathematical model capable of predicting the onset of unstable
+            aerodynamic behavior. The simulation was then compared against
+            historical conditions from the actual bridge collapse.
+        </p>
+
+        <p>
+            The project combined mechanical engineering fundamentals,
+            differential equations, numerical methods, and computational
+            modeling to connect a mathematical model to a real-world
+            structural failure.
+        </p>
+
+    </section>
+
+
+    <!-- FEATURED ANALYSIS -->
+
+    <section class="section">
+
+        <div class="section-label">
+            02 · FEATURED ANALYSIS
+        </div>
+
+        <h2>Aeroelastic Flutter Model</h2>
+
+        <div class="featured">
+
+            <h3>
+                Predicting when aerodynamic forces become unstable
+            </h3>
+
+            <p>
+                The MATLAB simulation modeled the interaction between the
+                bridge structure and aerodynamic loading as wind speed
+                increased. The model was used to identify the critical wind
+                speed at which the bridge's response transitioned toward
+                unstable flutter.
+            </p>
+
+            <div class="detail-grid">
+
+                <div class="detail-box">
+                    <h3>Structural Dynamics</h3>
+                    <p>
+                        Modeled the bridge as a dynamic structural system and
+                        evaluated its response to aerodynamic excitation.
+                    </p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Aerodynamic Loading</h3>
+                    <p>
+                        Incorporated wind-dependent aerodynamic effects into
+                        the model to investigate the onset of flutter.
+                    </p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Numerical Simulation</h3>
+                    <p>
+                        Used MATLAB to numerically solve the governing model
+                        and examine the bridge response across changing wind
+                        conditions.
+                    </p>
+                </div>
+
+                <div class="detail-box">
+                    <h3>Model Validation</h3>
+                    <p>
+                        Compared the predicted critical wind speed against
+                        documented real-world conditions from the Tacoma
+                        Narrows Bridge collapse.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENGINEERING APPROACH -->
+
+    <section class="section">
+
+        <div class="section-label">
+            03 · ENGINEERING APPROACH
+        </div>
+
+        <h2>From Physics to Code</h2>
+
+        <div class="process">
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>Define</h3>
+
+                <p>
+                    Identify the physical behavior and engineering
+                    assumptions needed to represent the bridge as a dynamic
+                    system.
+                </p>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>Model</h3>
+
+                <p>
+                    Develop the mathematical relationships describing
+                    structural response and aerodynamic excitation.
+                </p>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>Simulate</h3>
+
+                <p>
+                    Implement the model in MATLAB and evaluate the system's
+                    response as wind conditions change.
+                </p>
+
+            </div>
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>Compare</h3>
+
+                <p>
+                    Compare the modeled critical condition with the historical
+                    conditions associated with the actual bridge collapse.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODEL DEVELOPMENT -->
+
+    <section class="section">
+
+        <div class="section-label">
+            04 · MODEL DEVELOPMENT
+        </div>
+
+        <h2>Building the Simulation</h2>
+
+        <p>
+            The simulation was developed by translating the physical behavior
+            of the bridge into a computational model. MATLAB provided a way
+            to repeatedly solve the system while varying the wind conditions
+            and observing how the structural response changed.
+        </p>
+
+        <p>
+            Rather than treating the historical collapse as a purely
+            qualitative case study, the project used engineering analysis to
+            investigate why increasing aerodynamic excitation could drive the
+            structure into an unstable response.
+        </p>
+
+        <div class="detail-grid">
+
+            <div class="detail-box">
+                <h3>Input Parameters</h3>
+                <p>
+                    Defined the structural and aerodynamic parameters required
+                    to represent the bridge's behavior.
+                </p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Governing Equations</h3>
+                <p>
+                    Converted the physical system into mathematical equations
+                    that could be solved computationally.
+                </p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Wind-Speed Sweep</h3>
+                <p>
+                    Evaluated the system across changing wind speeds to
+                    identify the transition toward unstable behavior.
+                </p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Response Analysis</h3>
+                <p>
+                    Examined the simulated structural response to determine
+                    the critical condition predicted by the model.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section class="section">
+
+        <div class="section-label">
+            05 · RESULT
+        </div>
+
+        <h2>Simulation vs. Reality</h2>
+
+        <div class="result">
+
+            <div class="result-number">
+                MODEL ACCURACY
+            </div>
+
+            <h3>Within 5%</h3>
+
+            <p>
+                The MATLAB model predicted a critical wind speed within
+                approximately 5% of the documented real-world conditions
+                associated with the Tacoma Narrows Bridge collapse.
+            </p>
+
+        </div>
+
+        <p style="margin-top: 35px;">
+            The result provided a useful validation of the model while also
+            demonstrating the limitations of representing a complex
+            aeroelastic phenomenon with a simplified engineering model.
+        </p>
+
+    </section>
+
+
+    <!-- ENGINEERING TAKEAWAY -->
+
+    <section class="section">
+
+        <div class="section-label">
+            06 · ENGINEERING TAKEAWAY
+        </div>
+
+        <h2>Why It Matters</h2>
+
+        <p>
+            The most valuable part of this project was connecting mathematical
+            analysis to a physical engineering failure. The simulation showed
+            how structural dynamics and aerodynamic forces can interact to
+            produce behavior that would not be obvious from looking at the
+            structure alone.
+        </p>
+
+        <p>
+            It also reinforced the value of engineering models as tools for
+            understanding complex systems. A model does not need to reproduce
+            every physical detail to provide useful insight, but its
+            assumptions and limitations have to be understood when interpreting
+            the results.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="section">
+
+        <div class="section-label">
+            07 · TOOLS & SKILLS
+        </div>
+
+        <h2>Engineering Toolkit</h2>
+
+        <div class="skills">
+
+            <div class="skill">MATLAB</div>
+            <div class="skill">NUMERICAL MODELING</div>
+            <div class="skill">STRUCTURAL DYNAMICS</div>
+            <div class="skill">AEROELASTICITY</div>
+            <div class="skill">FLUTTER ANALYSIS</div>
+            <div class="skill">DIFFERENTIAL EQUATIONS</div>
+            <div class="skill">ENGINEERING ANALYSIS</div>
+            <div class="skill">SIMULATION</div>
+            <div class="skill">MODEL VALIDATION</div>
+            <div class="skill">DATA ANALYSIS</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <a href="../index.html">
+            ← BACK TO PORTFOLIO
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+</html>
