@@ -26,41 +26,19 @@
            TOPOGRAPHIC CONTOUR LINES
            ========================= */
 
-        body::before {
-            content: "";
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.22;
 
-            position: fixed;
-            top: 0;
-            left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='1200' height='800' viewBox='0 0 1200 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%239da99c' stroke-width='1'%3E%3Cpath d='M-100 100 C150 20 300 180 500 90 S850 20 1300 120'/%3E%3Cpath d='M-100 125 C150 45 300 205 500 115 S850 45 1300 145'/%3E%3Cpath d='M-100 150 C150 70 300 230 500 140 S850 70 1300 170'/%3E%3Cpath d='M-100 175 C150 95 300 255 500 165 S850 95 1300 195'/%3E%3Cpath d='M-100 200 C150 120 300 280 500 190 S850 120 1300 220'/%3E%3Cpath d='M-100 225 C150 145 300 305 500 215 S850 145 1300 245'/%3E%3Cpath d='M-100 250 C150 170 300 330 500 240 S850 170 1300 270'/%3E%3Cpath d='M-100 275 C150 195 300 355 500 265 S850 195 1300 295'/%3E%3Cpath d='M-100 300 C150 220 300 380 500 290 S850 220 1300 320'/%3E%3Cpath d='M-100 325 C150 245 300 405 500 315 S850 245 1300 345'/%3E%3Cpath d='M-100 350 C150 270 300 430 500 340 S850 270 1300 370'/%3E%3Cpath d='M-100 375 C150 295 300 455 500 365 S850 295 1300 395'/%3E%3Cpath d='M-100 400 C150 320 300 480 500 390 S850 320 1300 420'/%3E%3Cpath d='M-100 425 C150 345 300 505 500 415 S850 345 1300 445'/%3E%3Cpath d='M-100 450 C150 370 300 530 500 440 S850 370 1300 470'/%3E%3Cpath d='M-100 475 C150 395 300 555 500 465 S850 395 1300 495'/%3E%3Cpath d='M-100 500 C150 420 300 580 500 490 S850 420 1300 520'/%3E%3Cpath d='M-100 525 C150 445 300 605 500 515 S850 445 1300 545'/%3E%3Cpath d='M-100 550 C150 470 300 630 500 540 S850 470 1300 570'/%3E%3Cpath d='M-100 575 C150 495 300 655 500 565 S850 495 1300 595'/%3E%3Cpath d='M-100 600 C150 520 300 680 500 590 S850 520 1300 620'/%3E%3Cpath d='M-100 625 C150 545 300 705 500 615 S850 545 1300 645'/%3E%3Cpath d='M-100 650 C150 570 300 730 500 640 S850 570 1300 670'/%3E%3Cpath d='M-100 675 C150 595 300 755 500 665 S850 595 1300 695'/%3E%3Cpath d='M-100 700 C150 620 300 780 500 690 S850 620 1300 720'/%3E%3C/g%3E%3C/svg%3E");
 
-            width: 100%;
-            height: 100%;
-
-            z-index: -1;
-
-            opacity: 0.25;
-
-            background-image:
-                repeating-radial-gradient(
-                    ellipse at 20% 30%,
-                    transparent 0px,
-                    transparent 35px,
-                    #9da99c 37px,
-                    transparent 40px,
-                    transparent 75px
-                ),
-                repeating-radial-gradient(
-                    ellipse at 80% 70%,
-                    transparent 0px,
-                    transparent 50px,
-                    #9da99c 52px,
-                    transparent 55px,
-                    transparent 100px
-                );
-
-            pointer-events: none;
-        }
-
+    background-size: 1200px 800px;
+    background-position: center;
+}
 
         /* =========================
            INTRODUCTION SECTION
