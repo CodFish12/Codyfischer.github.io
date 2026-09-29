@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SafeWater LLC | Cody Fischer</title>
+
+    <style>
+
+        /* =========================
+           PAGE SETUP
+           ========================= */
+
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+
+        /* =========================
+           TOPOGRAPHIC CONTOUR LINES
+           ========================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+
+            opacity: 0.25;
+
+            background-image:
+                repeating-radial-gradient(
+                    ellipse at 20% 30%,
+                    transparent 0px,
+                    transparent 35px,
+                    #9da99c 37px,
+                    transparent 40px,
+                    transparent 75px
+                ),
+                repeating-radial-gradient(
+                    ellipse at 80% 70%,
+                    transparent 0px,
+                    transparent 50px,
+                    #9da99c 52px,
+                    transparent 55px,
+                    transparent 100px
+                );
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           BACK LINK
+           ========================= */
+
+        .back-link {
+            display: inline-block;
+
+            margin: 40px 50px;
+
+            color: #777;
+
+            text-decoration: none;
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .back-link:hover {
+            color: #9da99c;
+
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        .hero {
+            max-width: 1000px;
+
+            margin: 80px auto 0;
+
+            padding: 0 30px 120px;
+        }
+
+
+        .section-label {
+            color: #9da99c;
+
+            letter-spacing: 4px;
+
+            font-size: 12px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero h1 {
+            font-size: 72px;
+
+            margin: 0 0 20px;
+
+            line-height: 1;
+
+            transition: 0.3s ease;
+        }
+
+
+        .hero h1:hover {
+            letter-spacing: 4px;
+
+            color: #9da99c;
+        }
+
+
+        .hero-subtitle {
+            font-size: 22px;
+
+            color: #aaa;
+
+            margin: 0 0 15px;
+        }
+
+
+        .hero-date {
+            color: #666;
+
+            font-family: monospace;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CONTENT
+           ========================= */
+
+        .content {
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding: 0 30px 120px;
+        }
+
+
+        .content-section {
+            padding: 70px 0;
+
+            border-top: 1px solid rgba(157, 169, 156, 0.3);
+        }
+
+
+        .content-section h2 {
+            font-size: 42px;
+
+            margin: 0 0 30px;
+        }
+
+
+        .content-section h3 {
+            font-size: 25px;
+
+            margin: 45px 0 10px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .content-section h3:hover {
+            color: #9da99c;
+        }
+
+
+        .content-section p {
+            max-width: 800px;
+
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin: 0 0 20px;
+        }
+
+
+        /* =========================
+           ENGINEERING WORK
+           ========================= */
+
+        .work-item {
+            display: grid;
+
+            grid-template-columns: 50px 1fr;
+
+            gap: 20px;
+
+            padding: 25px 0;
+
+            border-top: 1px solid rgba(157, 169, 156, 0.15);
+        }
+
+
+        .work-number {
+            color: #666;
+
+            font-family: monospace;
+
+            font-size: 14px;
+        }
+
+
+        .work-item h3 {
+            margin: 0 0 8px;
+
+            font-size: 23px;
+        }
+
+
+        .work-item p {
+            margin: 0;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FEATURED WORK
+           ========================= */
+
+        .featured {
+            margin-top: 40px;
+
+            padding: 35px;
+
+            border: 1px solid rgba(157, 169, 156, 0.3);
+
+            transition: 0.3s ease;
+        }
+
+
+        .featured:hover {
+            border-color: rgba(157, 169, 156, 0.7);
+
+            transform: translateX(5px);
+        }
+
+
+        .featured h3 {
+            margin: 0 0 10px;
+
+            font-size: 28px;
+        }
+
+
+        .featured p {
+            margin-bottom: 15px;
+        }
+
+
+        .featured-result {
+            color: #9da99c !important;
+
+            font-family: monospace;
+
+            font-size: 14px !important;
+
+            margin-top: 25px !important;
+        }
+
+
+        /* =========================
+           COMPONENT GRID
+           ========================= */
+
+        .component-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+
+        .component {
+            padding: 20px;
+
+            border: 1px solid rgba(157, 169, 156, 0.2);
+
+            color: #999;
+
+            font-family: monospace;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .component:hover {
+            color: #9da99c;
+
+            border-color: #9da99c;
+
+            transform: translateX(4px);
+        }
+
+
+        /* =========================
+           SKILLS
+           ========================= */
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+
+        .skill {
+            border: 1px solid rgba(157, 169, 156, 0.3);
+
+            padding: 10px 15px;
+
+            color: #999;
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .skill:hover {
+            color: #9da99c;
+
+            border-color: #9da99c;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .back-link {
+                margin: 30px 25px;
+            }
+
+            .hero {
+                margin-top: 50px;
+
+                padding: 0 25px 80px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 0 25px 80px;
+            }
+
+            .content-section h2 {
+                font-size: 34px;
+            }
+
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACK TO PORTFOLIO
+         ========================= -->
+
+    <a href="../index.html" class="back-link">
+        ← BACK TO PORTFOLIO
+    </a>
+
+
+    <!-- =========================
+         HERO
+         ========================= -->
+
+    <section class="hero">
+
+        <p class="section-label">
+            ENGINEERING EXPERIENCE
+        </p>
+
+        <h1>
+            SAFEWATER LLC
+        </h1>
+
+        <p class="hero-subtitle">
+            Mechanical Engineering Intern
+        </p>
+
+        <p class="hero-date">
+            MAY 2025 — SEPTEMBER 2025
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CONTENT
+         ========================= -->
+
+    <main class="content">
+
+
+        <!-- =========================
+             OVERVIEW
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                01 / OVERVIEW
+            </p>
+
+            <h2>
+                Hands-On Engineering
+            </h2>
+
+            <p>
+                As a Mechanical Engineering Intern at SafeWater LLC, I worked
+                directly with commercial water vending and filtration
+                machines, combining mechanical repair, system troubleshooting,
+                CAD, electrical work, and documentation.
+            </p>
+
+            <p>
+                I helped restore and refurbish approximately 25 machines that
+                use multi-stage filtration and purification systems to remove
+                contaminants and improve water quality. The work required
+                understanding how mechanical, fluid, electrical, and
+                electronic systems interacted as a complete machine.
+            </p>
+
+            <p>
+                This experience gave me the opportunity to work directly with
+                physical hardware from diagnosis through repair, modification,
+                testing, and documentation.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             REFURBISHING
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                02 / MACHINE REFURBISHING
+            </p>
+
+            <h2>
+                Rebuilding Real Hardware
+            </h2>
+
+            <div class="featured">
+
+                <h3>
+                    Commercial Water Filtration Systems
+                </h3>
+
+                <p>
+                    Refurbished approximately 25 commercial water filtration
+                    machines by diagnosing failed components, restoring
+                    filtration systems, replacing worn hardware, and
+                    verifying machine operation.
+                </p>
+
+                <p>
+                    The systems incorporated pumps, solenoid valves, reverse
+                    osmosis membranes, ultraviolet sanitation, float sensors,
+                    flow controllers, filters, microcontrollers, and
+                    printed circuit boards.
+                </p>
+
+                <p>
+                    I worked through the machines systematically, identifying
+                    failed or degraded components and determining whether
+                    components should be repaired, replaced, or redesigned.
+                </p>
+
+                <p class="featured-result">
+                    APPROXIMATELY 25 MACHINES REFURBISHED
+                </p>
+
+            </div>
+
+
+            <div class="component-grid">
+
+                <div class="component">
+                    PUMPS
+                </div>
+
+                <div class="component">
+                    SOLENOID VALVES
+                </div>
+
+                <div class="component">
+                    RO MEMBRANES
+                </div>
+
+                <div class="component">
+                    UV SANITATION
+                </div>
+
+                <div class="component">
+                    FLOAT SENSORS
+                </div>
+
+                <div class="component">
+                    FLOW CONTROLLERS
+                </div>
+
+                <div class="component">
+                    FILTERS
+                </div>
+
+                <div class="component">
+                    MICROCONTROLLERS / PCBA
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DESIGN & CAD
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                03 / DESIGN & CAD
+            </p>
+
+            <h2>
+                Designing Replacement Hardware
+            </h2>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        SolidWorks Assemblies
+                    </h3>
+
+                    <p>
+                        Created and modified SolidWorks assemblies to
+                        document machine configurations and support the
+                        development of replacement and custom components.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Custom Components
+                    </h3>
+
+                    <p>
+                        Designed custom parts and hardware to address machine
+                        repair and refurbishment requirements when existing
+                        components were unavailable or unsuitable.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Engineering Drawings
+                    </h3>
+
+                    <p>
+                        Developed engineering drawings and supporting
+                        documentation for custom and replacement components.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ELECTRICAL
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                04 / ELECTRICAL & CONTROLS
+            </p>
+
+            <h2>
+                Mechanical Systems Meet Electronics
+            </h2>
+
+            <p>
+                The machines combined mechanical components with electronic
+                controls, requiring troubleshooting across both sides of the
+                system.
+            </p>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Soldering & PCB Work
+                    </h3>
+
+                    <p>
+                        Performed soldering and electrical repair work on
+                        printed circuit boards and electronic components used
+                        within the machines.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Microcontroller Programming
+                    </h3>
+
+                    <p>
+                        Programmed machine control parameters including
+                        volumetric flow rates and automatic shut-off times.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        System Troubleshooting
+                    </h3>
+
+                    <p>
+                        Diagnosed interactions between sensors, valves, pumps,
+                        controllers, and electrical systems to identify the
+                        root causes of machine failures.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOCUMENTATION
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                05 / DOCUMENTATION
+            </p>
+
+            <h2>
+                Building a Better Process
+            </h2>
+
+            <p>
+                In addition to working directly on the machines, I helped
+                establish a more structured refurbishment process for the
+                company.
+            </p>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Standard Operating Procedures
+                    </h3>
+
+                    <p>
+                        Developed standard operating procedures and manuals
+                        to document machine refurbishment and maintenance
+                        processes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-item">
+
+                <div class="work-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Refurbishment System
+                    </h3>
+
+                    <p>
+                        Helped create a more consistent refurbishment system
+                        for evaluating, repairing, documenting, and returning
+                        machines to service.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                06 / TOOLS & SKILLS
+            </p>
+
+            <h2>
+                Engineering Toolkit
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill">SolidWorks</div>
+
+                <div class="skill">Engineering Drawings</div>
+
+                <div class="skill">Mechanical Troubleshooting</div>
+
+                <div class="skill">Fluid Systems</div>
+
+                <div class="skill">Reverse Osmosis</div>
+
+                <div class="skill">Soldering</div>
+
+                <div class="skill">PCB / PCBA</div>
+
+                <div class="skill">Microcontrollers</div>
+
+                <div class="skill">Programming</div>
+
+                <div class="skill">Custom Fabrication</div>
+
+                <div class="skill">System Integration</div>
+
+                <div class="skill">Technical Documentation</div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
