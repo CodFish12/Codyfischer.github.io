@@ -23,7 +23,21 @@
         position: relative;
     }
 
+/* Images for Experience and Project entries */
+.entry-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    filter: grayscale(15%);
+    transition: filter 0.3s ease;
+}
 
+.experience-item:hover .entry-image,
+.project-item:hover .entry-image {
+    filter: grayscale(0%);
+}
     /* =========================
        TOPOGRAPHIC CONTOUR LINES
        ========================= */
