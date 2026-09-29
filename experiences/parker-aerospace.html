@@ -24,19 +24,20 @@
     }
 
 /* Images for Experience and Project entries */
-.entry-image {
-    width: 180px;
-    height: 120px;
-    object-fit: cover;
+.featured-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 20px 0 25px;
     border-radius: 4px;
-    flex-shrink: 0;
     filter: grayscale(15%);
     transition: filter 0.3s ease;
 }
 
-.experience-item:hover .entry-image,
-.project-item:hover .entry-image {
+.featured-image:hover {
     filter: grayscale(0%);
+}
 }
     .experience-item,
 .project-item {
@@ -597,7 +598,7 @@
             </h3>
 <img src="images/xl249.jpeg"
      alt="EBatt"
-     class="personal-image">
+     class="featured-image">
             <p>
                 Redesigned an aerospace battery heater blanket to improve
                 manufacturability and assembly while addressing failure
