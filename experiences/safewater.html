@@ -392,6 +392,23 @@
     filter: grayscale(0%);
     border-color: rgba(157, 169, 156, 0.7);
 }
+    .text-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 3px solid rgba(157, 169, 156, 0.6);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.text-box:hover {
+    border-color: #9da99c;
+}
+
+.text-box p:last-child {
+    margin-bottom: 0;
+}
     </style>
 
 </head>
@@ -459,6 +476,9 @@
 <img src="../images/safewater1.jpeg"
      alt="EBatt"
      class="featured-image">
+            
+    <div class="text-box">
+                
             <p>
                 As a Mechanical Engineering Intern at SafeWater LLC, I worked
                 directly with commercial water vending and filtration
@@ -479,6 +499,8 @@
                 physical hardware from diagnosis through repair, modification,
                 testing, and documentation.
             </p>
+                
+</div>
 
         </section>
 
