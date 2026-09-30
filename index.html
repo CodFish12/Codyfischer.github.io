@@ -441,6 +441,127 @@ body::before {
     .personal-image {
         height: 210px;
     }
+    ```css
+/* =========================
+   ENGINEERING CARD GRIDS
+   ========================= */
+
+.engineering-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 35px;
+}
+
+
+/* Clickable card */
+
+.engineering-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    border: 1px solid rgba(157,169,156,0.3);
+    padding: 30px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Card hover */
+
+.engineering-card:hover {
+    border-color: rgba(157,169,156,0.7);
+    transform: translateY(-5px);
+}
+
+
+/* Small category */
+
+.engineering-tag {
+    display: block;
+
+    color: #666;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Title */
+
+.engineering-card h3 {
+    margin: 0 0 22px;
+
+    font-size: 28px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Title hover */
+
+.engineering-card:hover h3 {
+    color: #9da99c;
+}
+
+
+/* Image */
+
+.engineering-image {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+    display: block;
+
+    margin-bottom: 22px;
+
+    filter: grayscale(15%);
+
+    transition: 0.3s ease;
+}
+
+
+/* Image hover */
+
+.engineering-card:hover .engineering-image {
+    filter: grayscale(0%);
+}
+
+
+/* Description */
+
+.engineering-card p {
+    margin: 0;
+
+    color: #999;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .engineering-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .engineering-card {
+        padding: 24px;
+    }
+
+    .engineering-image {
+        height: 210px;
+    }
+}
+
 }
     </style>
 
@@ -459,9 +580,11 @@ body::before {
         <p>MECHANICAL ENGINEER</p>
 
         <h1>CODY FISCHER</h1>
-<img src="images/dtdpic.jpg"
+        
+<img src="images/dtdpic.JPG"
      alt="Headshot"
      class="personal-image">
+        
         <h2>
             Senior Mechanical Engineering Student @ University of Arizona
             <br>
@@ -473,89 +596,108 @@ body::before {
     </section>
 
 
-    <!-- =========================
-         EXPERIENCES
-         ========================= -->
+```html
+<!-- =========================
+     EXPERIENCES
+     ========================= -->
 
-    <section class="experiences">
+<section class="experiences">
 
-        <p class="section-label">ENGINEERING EXPERIENCE</p>
+    <p class="section-label">
+        ENGINEERING EXPERIENCE
+    </p>
 
-        <h2>EXPERIENCES</h2>
+    <h2>
+        EXPERIENCES
+    </h2>
 
-        <div class="experience-list">
+    <div class="engineering-grid">
 
 
-            <!-- Parker Aerospace -->
+        <!-- Parker Aerospace -->
 
-<a href="experiences/parker-aerospace.html" class="experience">
+        <a href="experiences/parker-aerospace.html"
+           class="engineering-card">
 
-    <div class="experience-date">
-        MAY 2026 — PRESENT
+            <span class="engineering-tag">
+                AEROSPACE
+            </span>
+
+            <h3>
+                Parker Aerospace
+            </h3>
+
+            <img src="images/parker.jpeg"
+                 alt="Parker Aerospace"
+                 class="engineering-image">
+
+            <p>
+                Mechanical Engineering Intern working on high-definition
+                aerospace camera systems through sustaining engineering,
+                CAD, GD&T, tolerance analysis, engineering changes,
+                and hands-on manufacturing support.
+            </p>
+
+        </a>
+
+
+        <!-- NASA Space Grant -->
+
+        <a href="experiences/nasa-space-grant.html"
+           class="engineering-card">
+
+            <span class="engineering-tag">
+                RESEARCH
+            </span>
+
+            <h3>
+                NASA Space Grant Consortium
+            </h3>
+
+            <img src="images/nasa.jpeg"
+                 alt="NASA research"
+                 class="engineering-image">
+
+            <p>
+                Undergraduate researcher and intern advisor working in
+                aerospace analysis, Mars magnetic field research, and
+                machine-learning approaches to topology optimization
+                for additive manufacturing.
+            </p>
+
+        </a>
+
+
+        <!-- SafeWater -->
+
+        <a href="experiences/safewater.html"
+           class="engineering-card">
+
+            <span class="engineering-tag">
+                MECHANICAL SYSTEMS
+            </span>
+
+            <h3>
+                SafeWater LLC
+            </h3>
+
+            <img src="images/safewater.jpeg"
+                 alt="Water filtration system"
+                 class="engineering-image">
+
+            <p>
+                Mechanical Engineering Intern restoring and redesigning
+                commercial water filtration systems through hands-on
+                troubleshooting, CAD, machining, soldering, controls,
+                and system documentation.
+            </p>
+
+        </a>
+
+
     </div>
 
-    <div class="experience-info">
-        <h3>Parker Aerospace</h3>
-
-        <p>
-            Mechanical Engineering Intern
-        </p>
-    </div>
-
-    <div class="experience-arrow">
-        →
-    </div>
-
-</a>
-
-
-            <!-- NASA Space Grant -->
-<a href="experiences/nasa-space-grant.html" class="experience">
-
-    <div class="experience-date">
-        SEPT 2025 — PRESENT
-    </div>
-
-    <div class="experience-info">
-        <h3>NASA Space Grant Consortium</h3>
-
-        <p>
-            Intern Advisor & Researcher
-        </p>
-    </div>
-
-    <div class="experience-arrow">
-        →
-    </div>
-
-</a>
-            <!-- SafeWater -->
-
-<a href="experiences/safewater.html" class="experience">
-
-    <div class="experience-date">
-        MAY 2025 — SEPT 2025
-    </div>
-
-    <div class="experience-info">
-        <h3>SafeWater LLC</h3>
-
-        <p>
-            Mechanical Engineering Intern
-        </p>
-    </div>
-
-    <div class="experience-arrow">
-        →
-    </div>
-
-</a>
-
-
-        </div>
-
-    </section>
-
+</section>
 
     <!-- =========================
          PROJECTS
