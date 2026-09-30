@@ -376,7 +376,20 @@
             }
 
         }
+.featured-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 20px auto 25px;
+    border-radius: 4px;
+    filter: grayscale(15%);
+    transition: filter 0.3s ease;
+}
 
+.featured-image:hover {
+    filter: grayscale(0%);
+}
     </style>
 
 </head>
@@ -474,7 +487,9 @@
             <p class="section-label">
                 02 / MACHINE REFURBISHING
             </p>
-
+<img src="../images/safewater1.jpeg"
+     alt="EBatt"
+     class="featured-image">
             <h2>
                 Rebuilding Real Hardware
             </h2>
