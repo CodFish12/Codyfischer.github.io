@@ -23,16 +23,18 @@
 
 
         /* =========================
-           TOPOGRAPHIC CONTOUR LINES
+           STREAMLINE BACKGROUND
            ========================= */
-#bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-}
+
+        #bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
 
         /* =========================
            BACK LINK
@@ -340,6 +342,125 @@
 
 
         /* =========================
+           FEATURED IMAGE
+           ========================= */
+
+        .featured-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            display: block;
+            margin: 20px auto 25px;
+            border: 4px solid rgba(157, 169, 156, 0.3);
+            border-radius: 4px;
+            filter: grayscale(15%);
+            transition: filter 0.3s ease, border-color 0.3s ease;
+        }
+
+        .featured-image:hover {
+            filter: grayscale(0%);
+            border-color: rgba(157, 169, 156, 0.7);
+        }
+
+
+        /* =========================
+           TEXT BOX
+           ========================= */
+
+        .text-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 3px solid rgba(157, 169, 156, 0.6);
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .text-box:hover {
+            border-color: #9da99c;
+        }
+
+        .text-box p {
+            color: white;
+        }
+
+        .text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           STAT ROW + HIGHLIGHTS
+           ========================= */
+
+        .stat-row,
+        .highlight-grid {
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            background: rgba(17, 17, 17, 0.6);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #9da99c;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            display: block;
+            color: #999;
+            font-family: monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .highlight {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.2);
+            background: rgba(17, 17, 17, 0.6);
+            color: #ddd;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: 0.3s ease;
+        }
+
+        .highlight:hover {
+            border-color: #9da99c;
+            transform: translateX(4px);
+        }
+
+        .highlight-tag {
+            display: block;
+            color: #9da99c;
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
            MOBILE
            ========================= */
 
@@ -375,43 +496,13 @@
                 grid-template-columns: 1fr;
             }
 
+            .stat-row,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
-.featured-image {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    display: block;
-    margin: 20px auto 25px;
-    border: 4px solid rgba(157, 169, 156, 0.3);
-    border-radius: 4px;
-    filter: grayscale(15%);
-    transition: filter 0.3s ease, border-color 0.3s ease;
-}
 
-.featured-image:hover {
-    filter: grayscale(0%);
-    border-color: rgba(157, 169, 156, 0.7);
-}
-    .text-box {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 30px;
-    border: 3px solid rgba(157, 169, 156, 0.6);
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-.text-box:hover {
-    border-color: #9da99c;
-}
-
-.text-box p:last-child {
-    margin-bottom: 0;
-}
- .text-box p {
-    color: white;
-}
     </style>
 
 </head>
@@ -475,56 +566,69 @@
             <h2>
                 Hands-On Engineering
             </h2>
-            
-<img src="../images/safewater1.jpeg"
-     alt="EBatt"
-     class="featured-image">
-            
-    <div class="text-box">
-                
-            <p>
-                As a Mechanical Engineering Intern at SafeWater LLC, I worked
-                directly with commercial water vending and filtration
-                machines, combining mechanical repair, system troubleshooting,
-                CAD, electrical work, and documentation.
-            </p>
 
-            <p>
-                I helped restore and refurbish approximately 25 machines that
-                use multi-stage filtration and purification systems to remove
-                contaminants and improve water quality. The work required
-                understanding how mechanical, fluid, and electrical, systems 
-                interacted as a complete machine.
-            </p>
+            <img src="../images/safewater1.jpeg"
+                 alt="EBatt"
+                 class="featured-image">
 
-            <p>
-                This experience gave me the opportunity to work directly with
-                physical hardware from diagnosis through repair, modification,
-                testing, and documentation.
-            </p>
-                
-</div>
+            <div class="text-box">
+
+                <p>
+                    Refurbished and redesigned commercial water filtration
+                    machines, working across mechanical, fluid, and electrical
+                    systems from diagnosis through documentation.
+                </p>
+
+            </div>
+
+            <div class="stat-row">
+
+                <div class="stat">
+                    <span class="stat-number">~25</span>
+                    <span class="stat-label">MACHINES REFURBISHED</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">SYSTEMS: MECH / FLUID / ELECTRICAL</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">SOPs</span>
+                    <span class="stat-label">WRITTEN FOR THE COMPANY</span>
+                </div>
+
+            </div>
+
+            <div class="highlight-grid">
+
+                <div class="highlight">
+                    <span class="highlight-tag">REFURBISH</span>
+                    Diagnosed failed components and restored multi-stage
+                    filtration systems.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">DESIGN</span>
+                    Modeled assemblies and custom replacement parts in
+                    SolidWorks.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">CONTROLS</span>
+                    Repaired PCBs and programmed flow rates and shut-off times.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">PROCESS</span>
+                    Wrote SOPs and manuals to standardize refurbishment.
+                </div>
+
+            </div>
 
         </section>
 
-<div class="experience-highlights">
 
-    <div class="highlight">
-        <span>25+</span>
-        <p>Commercial filtration systems restored</p>
-    </div>
-
-    <div class="highlight">
-        <span>FULL SYSTEM</span>
-        <p>Mechanical + electrical troubleshooting</p>
-    </div>
-
-    <div class="highlight">
-        <span>END-TO-END</span>
-        <p>CAD, fabrication, assembly, testing & documentation</p>
-    </div>
-
-</div>
         <!-- =========================
              SKILLS
              ========================= -->
@@ -565,6 +669,8 @@
 
 
     </main>
+
+
 <script>
 (function () {
     const canvas = document.getElementById("bg");
