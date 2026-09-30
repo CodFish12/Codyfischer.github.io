@@ -25,42 +25,20 @@
         /* =========================
            TOPOGRAPHIC CONTOUR LINES
            ========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.20;
 
-        body::before {
-            content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='1600' height='1000' viewBox='0 0 1600 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%239da99c' stroke-width='1'%3E%3Cpath d='M-150 900 C80 820 180 690 390 720 C610 750 620 510 850 470 C1080 430 1170 250 1390 300 C1500 325 1570 250 1750 170'/%3E%3Cpath d='M-180 820 C40 770 190 620 410 660 C620 700 680 470 890 430 C1100 390 1220 180 1430 230 C1530 255 1620 180 1740 120'/%3E%3Cpath d='M-160 735 C70 700 210 550 430 590 C650 630 710 410 920 380 C1120 350 1260 150 1450 185 C1550 205 1630 130 1760 75'/%3E%3Cpath d='M-130 650 C100 630 240 480 450 525 C650 565 740 350 950 330 C1150 310 1290 110 1480 145 C1580 165 1650 90 1770 40'/%3E%3Cpath d='M-120 560 C110 555 260 420 470 465 C680 510 760 300 980 285 C1180 270 1320 80 1500 105 C1600 120 1680 55 1780 10'/%3E%3Cpath d='M-100 470 C130 485 280 360 490 405 C700 450 800 255 1010 245 C1210 235 1340 45 1520 70 C1620 85 1690 20 1790 -20'/%3E%3Cpath d='M-80 385 C150 415 300 310 510 345 C720 380 830 205 1040 205 C1240 205 1360 20 1540 40 C1640 50 1710 -10 1800 -40'/%3E%3Cpath d='M-50 300 C170 345 330 250 530 285 C740 320 850 160 1070 165 C1260 170 1390 0 1570 20 C1660 30 1730 -25 1810 -50'/%3E%3Cpath d='M-20 215 C190 270 350 190 550 225 C760 260 880 120 1090 125 C1280 130 1410 -35 1590 0 C1680 15 1740 -35 1820 -60'/%3E%3C/g%3E%3Cg fill='%239da99c'%3E%3Ccircle cx='410' cy='660' r='3'/%3E%3Ccircle cx='890' cy='430' r='3'/%3E%3Ccircle cx='1260' cy='150' r='3'/%3E%3Ccircle cx='760' cy='350' r='2.5'/%3E%3C/g%3E%3Cg stroke='%239da99c' stroke-width='1' opacity='.7'%3E%3Cpath d='M410 645v30M395 660h30'/%3E%3Cpath d='M890 415v30M875 430h30'/%3E%3Cpath d='M1260 135v30M1245 150h30'/%3E%3C/g%3E%3C/svg%3E");
 
-            position: fixed;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            z-index: -1;
-
-            opacity: 0.25;
-
-            background-image:
-                repeating-radial-gradient(
-                    ellipse at 20% 30%,
-                    transparent 0px,
-                    transparent 35px,
-                    #9da99c 37px,
-                    transparent 40px,
-                    transparent 75px
-                ),
-                repeating-radial-gradient(
-                    ellipse at 80% 70%,
-                    transparent 0px,
-                    transparent 50px,
-                    #9da99c 52px,
-                    transparent 55px,
-                    transparent 100px
-                );
-
-            pointer-events: none;
-        }
-
+    background-size: 1600px 1000px;
+    background-position: center;
+    background-repeat: repeat;
+}
 
         /* =========================
            BACK LINK
