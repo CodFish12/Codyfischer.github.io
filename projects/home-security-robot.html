@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Home Security Robot | Cody Fischer</title>
+    <title>Home Security Robot | Cody Fischer</title>
 
-<style>
+    <style>
 
-body {
-    margin: 0;
-    background: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-    position: relative;
-}
-
-/* TOPOGRAPHIC BACKGROUND */
+        /* =========================
+           PAGE SETUP
+           ========================= */
 
         body {
             margin: 0;
@@ -26,753 +21,1046 @@ body {
             position: relative;
         }
 
-/* PAGE */
 
-.project-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 30px 120px;
-}
+        /* =========================
+           STREAMLINE BACKGROUND
+           ========================= */
 
-/* BACK LINK */
+        #bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
 
-.back-link {
-    display: inline-block;
-    color: #777;
-    text-decoration: none;
-    font-family: monospace;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 90px;
-    transition: 0.3s ease;
-}
 
-.back-link:hover {
-    color: #9da99c;
-    transform: translateX(-5px);
-}
+        /* =========================
+           BACK LINK
+           ========================= */
 
-/* HERO */
+        .back-link {
+            display: inline-block;
+            margin: 40px 50px;
+            color: #777;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
 
-.hero {
-    margin-bottom: 120px;
-}
+        .back-link:hover {
+            color: #9da99c;
+            transform: translateX(-5px);
+        }
 
-.hero-label {
-    color: #9da99c;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 15px;
-}
 
-.hero h1 {
-    font-size: 78px;
-    margin: 0;
-    line-height: 1;
-    letter-spacing: -2px;
-}
+        /* =========================
+           HERO
+           ========================= */
 
-.hero h2 {
-    font-size: 24px;
-    font-weight: normal;
-    color: #aaa;
-    margin: 20px 0 15px;
-}
+        .hero {
+            max-width: 1000px;
+            margin: 80px auto 0;
+            padding: 0 30px 120px;
+        }
 
-.hero-date {
-    color: #666;
-    font-family: monospace;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
+        .section-label {
+            color: #9da99c;
+            letter-spacing: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
 
-/* SECTIONS */
+        .hero h1 {
+            font-size: 72px;
+            margin: 0 0 20px;
+            line-height: 1;
+            transition: 0.3s ease;
+        }
 
-.section {
-    margin-bottom: 110px;
-}
+        .hero h1:hover {
+            letter-spacing: 4px;
+            color: #9da99c;
+        }
 
-.section-label {
-    color: #9da99c;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 12px;
-}
+        .hero-subtitle {
+            font-size: 22px;
+            color: #aaa;
+            margin: 0 0 15px;
+        }
 
-.section h2 {
-    font-size: 48px;
-    margin: 0 0 35px;
-}
+        .hero-date {
+            color: #666;
+            font-family: monospace;
+            font-size: 13px;
+        }
 
-.section p {
-    max-width: 850px;
-    color: #aaa;
-    font-size: 17px;
-    line-height: 1.8;
-}
 
-/* FEATURED PROJECT */
+        /* =========================
+           CONTENT
+           ========================= */
 
-.featured {
-    border-top: 1px solid rgba(157,169,156,0.3);
-    border-bottom: 1px solid rgba(157,169,156,0.3);
-    padding: 45px 0;
-    margin-top: 30px;
-}
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px 120px;
+        }
 
-.featured h3 {
-    font-size: 32px;
-    margin: 0 0 20px;
-}
+        .content-section {
+            padding: 70px 0;
+            border-top: 1px solid rgba(157, 169, 156, 0.3);
+        }
 
-.featured p {
-    margin-bottom: 30px;
-}
+        .content-section h2 {
+            font-size: 42px;
+            margin: 0 0 30px;
+        }
 
-/* DETAIL GRID */
+        .content-section h3 {
+            font-size: 25px;
+            margin: 45px 0 10px;
+            transition: 0.3s ease;
+        }
 
-.detail-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 40px;
-}
+        .content-section h3:hover {
+            color: #9da99c;
+        }
 
-.detail-box {
-    border: 1px solid rgba(157,169,156,0.25);
-    padding: 30px;
-    transition: 0.3s ease;
-}
+        .content-section p {
+            max-width: 800px;
+            color: #999;
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0 0 20px;
+        }
 
-.detail-box:hover {
-    border-color: rgba(157,169,156,0.7);
-    transform: translateY(-3px);
-}
 
-.detail-box h3 {
-    margin: 0 0 12px;
-    font-size: 20px;
-}
+        /* =========================
+           WORK ITEMS (numbered list)
+           ========================= */
 
-.detail-box p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.7;
-}
+        .work-item {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 20px;
+            padding: 25px 0;
+            border-top: 1px solid rgba(157, 169, 156, 0.15);
+        }
 
-/* ENGINEERING ROLE */
+        .work-number {
+            color: #666;
+            font-family: monospace;
+            font-size: 14px;
+        }
 
-.role-list {
-    margin-top: 35px;
-}
+        .work-item h3 {
+            margin: 0 0 8px;
+            font-size: 23px;
+        }
 
-.role-item {
-    padding: 25px 0;
-    border-top: 1px solid rgba(157,169,156,0.2);
-}
+        .work-item p {
+            margin: 0;
+            font-size: 15px;
+        }
 
-.role-item:last-child {
-    border-bottom: 1px solid rgba(157,169,156,0.2);
-}
 
-.role-item h3 {
-    margin: 0 0 10px;
-    font-size: 22px;
-}
+        /* =========================
+           FEATURED WORK
+           ========================= */
 
-.role-item p {
-    margin: 0;
-    font-size: 15px;
-}
+        .featured {
+            margin-top: 40px;
+            padding: 35px;
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            transition: 0.3s ease;
+        }
 
-/* DESIGN PROCESS */
+        .featured:hover {
+            border-color: rgba(157, 169, 156, 0.7);
+            transform: translateX(5px);
+        }
 
-.process {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 40px;
-}
+        .featured h3 {
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
 
-.process-step {
-    border-top: 2px solid #9da99c;
-    padding-top: 20px;
-}
+        .featured p {
+            margin-bottom: 15px;
+        }
 
-.process-number {
-    color: #666;
-    font-family: monospace;
-    font-size: 13px;
-}
 
-.process-step h3 {
-    font-size: 19px;
-    margin: 12px 0 10px;
-}
+        /* =========================
+           COMPONENT GRID
+           ========================= */
 
-.process-step p {
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.6;
-}
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
 
-/* SKILLS */
+        .component {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.2);
+            transition: 0.3s ease;
+        }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
-}
+        .component:hover {
+            border-color: #9da99c;
+            transform: translateX(4px);
+        }
 
-.skill {
-    border: 1px solid rgba(157,169,156,0.35);
-    padding: 10px 15px;
-    color: #aaa;
-    font-family: monospace;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    transition: 0.3s ease;
-}
+        .component-title {
+            display: block;
+            color: #ddd;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-.skill:hover {
-    color: #9da99c;
-    border-color: #9da99c;
-}
+        .component-text {
+            display: block;
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
-/* FOOTER */
 
-.footer {
-    margin-top: 120px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(157,169,156,0.3);
-}
+        /* =========================
+           PROCESS
+           ========================= */
 
-.footer a {
-    color: #777;
-    text-decoration: none;
-    font-family: monospace;
-    font-size: 13px;
-    transition: 0.3s ease;
-}
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
 
-.footer a:hover {
-    color: #9da99c;
-}
+        .process-step {
+            border-top: 2px solid #9da99c;
+            padding-top: 20px;
+        }
 
-/* MOBILE */
+        .process-number {
+            color: #666;
+            font-family: monospace;
+            font-size: 13px;
+        }
 
-@media (max-width: 700px) {
+        .process-step h3 {
+            font-size: 19px;
+            margin: 12px 0 10px;
+        }
 
-    .project-page {
-        padding: 30px 20px 80px;
-    }
+        .process-step p {
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
 
-    .back-link {
-        margin-bottom: 60px;
-    }
 
-    .hero {
-        margin-bottom: 80px;
-    }
+        /* =========================
+           SKILLS
+           ========================= */
 
-    .hero h1 {
-        font-size: 48px;
-    }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
 
-    .hero h2 {
-        font-size: 19px;
-    }
+        .skill {
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            padding: 10px 15px;
+            color: #999;
+            font-family: monospace;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
 
-    .section {
-        margin-bottom: 80px;
-    }
+        .skill:hover {
+            color: #9da99c;
+            border-color: #9da99c;
+        }
 
-    .section h2 {
-        font-size: 36px;
-    }
 
-    .detail-grid {
-        grid-template-columns: 1fr;
-    }
+        /* =========================
+           FEATURED IMAGE
+           ========================= */
 
-    .process {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+        .featured-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            display: block;
+            margin: 20px auto 25px;
+            border: 4px solid rgba(157, 169, 156, 0.3);
+            border-radius: 4px;
+            filter: grayscale(15%);
+            transition: filter 0.3s ease, border-color 0.3s ease;
+        }
 
-@media (max-width: 450px) {
+        .featured-image:hover {
+            filter: grayscale(0%);
+            border-color: rgba(157, 169, 156, 0.7);
+        }
 
-    .process {
-        grid-template-columns: 1fr;
-    }
-}
 
-</style>
+        /* =========================
+           TEXT BOX
+           ========================= */
+
+        .text-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 3px solid rgba(157, 169, 156, 0.6);
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .text-box:hover {
+            border-color: #9da99c;
+        }
+
+        .text-box p {
+            color: white;
+        }
+
+        .text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           STAT ROW + HIGHLIGHTS
+           ========================= */
+
+        .stat-row,
+        .highlight-grid {
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            background: rgba(17, 17, 17, 0.6);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #9da99c;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            display: block;
+            color: #999;
+            font-family: monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .highlight {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.2);
+            background: rgba(17, 17, 17, 0.6);
+            color: #ddd;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: 0.3s ease;
+        }
+
+        .highlight:hover {
+            border-color: #9da99c;
+            transform: translateX(4px);
+        }
+
+        .highlight-tag {
+            display: block;
+            color: #9da99c;
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(157, 169, 156, 0.3);
+        }
+
+        .footer a {
+            color: #777;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #9da99c;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .back-link {
+                margin: 30px 25px;
+            }
+
+            .hero {
+                margin-top: 50px;
+                padding: 0 25px 80px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 0 25px 80px;
+            }
+
+            .content-section h2 {
+                font-size: 34px;
+            }
+
+            .featured {
+                padding: 25px;
+            }
+
+            .stat-row,
+            .highlight-grid,
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
 <body>
-    
 <canvas id="bg"></canvas>
 
-<main class="project-page">
+
+    <!-- =========================
+         BACK TO PORTFOLIO
+         ========================= -->
 
     <a href="../index.html" class="back-link">
         ← BACK TO PORTFOLIO
     </a>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+         ========================= -->
 
     <section class="hero">
 
-        <div class="hero-label">
+        <p class="section-label">
             MECHANICAL ENGINEERING · AME 352
-        </div>
+        </p>
 
-        <h1>HOME SECURITY ROBOT</h1>
+        <h1>
+            HOME SECURITY ROBOT
+        </h1>
 
-        <h2>
+        <p class="hero-subtitle">
             Chief Design Engineer
-        </h2>
+        </p>
 
-        <div class="hero-date">
+        <p class="hero-date">
             UNIVERSITY OF ARIZONA
-        </div>
-
-    </section>
-
-
-    <!-- OVERVIEW -->
-
-    <section class="section">
-
-        <div class="section-label">
-            01 · OVERVIEW
-        </div>
-
-        <h2>Designing a Mobile Security System</h2>
-
-        <p>
-            This project challenged a four-person engineering team to design
-            and build a functional home security robot. The system was
-            designed around a mobile platform capable of navigating its
-            environment while using sensors and a camera system to monitor
-            its surroundings.
-        </p>
-
-        <p>
-            As the Chief Design Engineer, I led the mechanical design of the
-            robot and coordinated the mechanical work across the team. I was
-            responsible for turning the system requirements into a physical
-            design that could actually be fabricated, assembled, and tested.
-        </p>
-
-        <p>
-            The project gave me the opportunity to take a mechanical system
-            from concept through CAD, analysis, component selection,
-            fabrication, assembly, and demonstration.
         </p>
 
     </section>
 
 
-    <!-- FEATURED DESIGN -->
+    <!-- =========================
+         CONTENT
+         ========================= -->
 
-    <section class="section">
+    <main class="content">
 
-        <div class="section-label">
-            02 · FEATURED DESIGN
-        </div>
 
-        <h2>Robot Architecture</h2>
+        <!-- =========================
+             OVERVIEW
+             ========================= -->
 
-        <div class="featured">
+        <section class="content-section">
 
-            <h3>
-                A compact mobile platform with an integrated camera turret
-            </h3>
-
-            <p>
-                The mechanical system was built around a mobile drive platform
-                with an elevated camera system. The design had to package the
-                drive components, electronics, sensors, and camera while
-                maintaining enough stability for the robot to move and operate
-                reliably.
+            <p class="section-label">
+                01 / OVERVIEW
             </p>
 
-            <div class="detail-grid">
+            <h2>
+                Designing a Mobile Security System
+            </h2>
 
-                <div class="detail-box">
-                    <h3>Mobile Drive</h3>
+            <!-- Add a photo here (the finished robot, ideally), then uncomment:
+            <img src="../images/YOUR-ROBOT-IMAGE.jpeg"
+                 alt="Home Security Robot"
+                 class="featured-image">
+            -->
+
+            <div class="text-box">
+
+                <p>
+                    This project challenged a four-person engineering team to
+                    design and build a functional home security robot. The system
+                    was designed around a mobile platform capable of navigating
+                    its environment while using sensors and a camera system to
+                    monitor its surroundings.
+                </p>
+
+                <p>
+                    As the Chief Design Engineer, I led the mechanical design of
+                    the robot and coordinated the mechanical work across the
+                    team. I was responsible for turning the system requirements
+                    into a physical design that could actually be fabricated,
+                    assembled, and tested.
+                </p>
+
+                <p>
+                    The project gave me the opportunity to take a mechanical
+                    system from concept through CAD, analysis, component
+                    selection, fabrication, assembly, and demonstration.
+                </p>
+
+            </div>
+
+            <div class="stat-row">
+
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">PERSON ENGINEERING TEAM LED</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">ANALYSES: MOTION STUDY &amp; FEA</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">ROBOT BUILT &amp; DEMONSTRATED</span>
+                </div>
+
+            </div>
+
+            <div class="highlight-grid">
+
+                <div class="highlight">
+                    <span class="highlight-tag">DESIGN</span>
+                    Led the mechanical design of the chassis, drive system, and
+                    camera turret in SolidWorks.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">ANALYSIS</span>
+                    Used SolidWorks motion tools and FEA to evaluate the design
+                    before committing to hardware.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">INTEGRATION</span>
+                    Integrated motors, sensors, electronics, and the
+                    Arduino-based control system with the mechanical design.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">LEADERSHIP</span>
+                    Coordinated mechanical work across the team and maintained
+                    the bill of materials.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURED DESIGN
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                02 / FEATURED DESIGN
+            </p>
+
+            <h2>
+                Robot Architecture
+            </h2>
+
+            <div class="featured">
+
+                <h3>
+                    A compact mobile platform with an integrated camera turret
+                </h3>
+
+                <!-- Optional image (a CAD render would look great here):
+                <img src="../images/YOUR-CAD-IMAGE.jpeg"
+                     alt="Robot CAD render"
+                     class="featured-image">
+                -->
+
+                <p>
+                    The mechanical system was built around a mobile drive
+                    platform with an elevated camera system. The design had to
+                    package the drive components, electronics, sensors, and
+                    camera while maintaining enough stability for the robot to
+                    move and operate reliably.
+                </p>
+
+                <div class="component-grid">
+
+                    <div class="component">
+                        <span class="component-title">Mobile Drive</span>
+                        <span class="component-text">
+                            Developed the mechanical drive system and used a
+                            pitman-style drive mechanism to convert motor
+                            rotation into controlled wheel motion.
+                        </span>
+                    </div>
+
+                    <div class="component">
+                        <span class="component-title">Camera Turret</span>
+                        <span class="component-text">
+                            Designed an elevated rotating camera assembly to
+                            expand the robot's field of view while integrating
+                            with the main chassis.
+                        </span>
+                    </div>
+
+                    <div class="component">
+                        <span class="component-title">Structural Design</span>
+                        <span class="component-text">
+                            Developed the chassis and supporting components in
+                            SolidWorks with consideration for strength, weight,
+                            manufacturability, and component packaging.
+                        </span>
+                    </div>
+
+                    <div class="component">
+                        <span class="component-title">System Integration</span>
+                        <span class="component-text">
+                            Integrated mechanical components with motors,
+                            sensors, electronics, and the Arduino-based control
+                            system.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MY ROLE
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                03 / MY ROLE
+            </p>
+
+            <h2>
+                Chief Design Engineer
+            </h2>
+
+
+            <div class="work-item">
+                <div class="work-number">01</div>
+                <div>
+                    <h3>Mechanical Design</h3>
                     <p>
-                        Developed the mechanical drive system and used a
-                        pitman-style drive mechanism to convert motor rotation
-                        into controlled wheel motion.
+                        Led the mechanical design of the robot, developing the
+                        chassis, drive components, camera turret, and supporting
+                        hardware in SolidWorks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-number">02</div>
+                <div>
+                    <h3>CAD &amp; Assemblies</h3>
+                    <p>
+                        Created detailed SolidWorks parts and assemblies to
+                        evaluate component fit, movement, packaging, and overall
+                        system integration.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-number">03</div>
+                <div>
+                    <h3>Motion Analysis</h3>
+                    <p>
+                        Used SolidWorks motion tools to evaluate the robot's
+                        mechanical movement and verify the behavior of the
+                        drive and moving components.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-number">04</div>
+                <div>
+                    <h3>FEA</h3>
+                    <p>
+                        Applied finite element analysis to evaluate structural
+                        behavior and identify potential issues before committing
+                        the design to hardware.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-number">05</div>
+                <div>
+                    <h3>Bill of Materials</h3>
+                    <p>
+                        Developed and maintained the bill of materials while
+                        selecting and organizing the mechanical and electrical
+                        components required to build the system.
+                    </p>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="work-number">06</div>
+                <div>
+                    <h3>Team Leadership</h3>
+                    <p>
+                        Led a four-person engineering team and coordinated the
+                        mechanical design with electrical, controls, and system
+                        requirements.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DESIGN PROCESS
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                04 / DESIGN PROCESS
+            </p>
+
+            <h2>
+                From Concept to Hardware
+            </h2>
+
+            <div class="process">
+
+                <div class="process-step">
+                    <div class="process-number">01</div>
+                    <h3>Concept</h3>
+                    <p>
+                        Established the robot architecture and translated the
+                        project requirements into a workable mechanical concept.
                     </p>
                 </div>
 
-                <div class="detail-box">
-                    <h3>Camera Turret</h3>
+                <div class="process-step">
+                    <div class="process-number">02</div>
+                    <h3>CAD</h3>
                     <p>
-                        Designed an elevated rotating camera assembly to
-                        expand the robot's field of view while integrating
-                        with the main chassis.
+                        Built the robot in SolidWorks and developed the
+                        individual components and assemblies needed for the
+                        system.
                     </p>
                 </div>
 
-                <div class="detail-box">
-                    <h3>Structural Design</h3>
+                <div class="process-step">
+                    <div class="process-number">03</div>
+                    <h3>Analysis</h3>
                     <p>
-                        Developed the chassis and supporting components in
-                        SolidWorks with consideration for strength, weight,
-                        manufacturability, and component packaging.
+                        Used motion analysis and FEA to evaluate mechanical
+                        performance before fabrication.
                     </p>
                 </div>
 
-                <div class="detail-box">
-                    <h3>System Integration</h3>
+                <div class="process-step">
+                    <div class="process-number">04</div>
+                    <h3>Build</h3>
                     <p>
-                        Integrated mechanical components with motors, sensors,
-                        electronics, and the Arduino-based control system.
+                        Fabricated, assembled, integrated, and demonstrated the
+                        completed robot as a functional system.
                     </p>
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- MY ROLE -->
+        <!-- =========================
+             CONTROLS & INTEGRATION
+             ========================= -->
 
-    <section class="section">
+        <section class="content-section">
 
-        <div class="section-label">
-            03 · MY ROLE
-        </div>
+            <p class="section-label">
+                05 / CONTROLS &amp; INTEGRATION
+            </p>
 
-        <h2>Chief Design Engineer</h2>
+            <h2>
+                Mechanical Meets Electrical
+            </h2>
 
-        <div class="role-list">
+            <p>
+                The robot required the mechanical system to work closely with
+                its electronics and controls. Mechanical packaging had to
+                account for motors, sensors, wiring, the control board, and the
+                camera system while leaving enough access for assembly and
+                troubleshooting.
+            </p>
 
-            <div class="role-item">
+            <p>
+                An Arduino-based Lafvin UNO R3 platform was used for the robot's
+                control system, including an ultrasonic sensor demonstration.
+                The project provided hands-on experience integrating physical
+                hardware with embedded controls rather than treating the
+                mechanical and electrical systems as separate designs.
+            </p>
 
-                <h3>Mechanical Design</h3>
+            <div class="component-grid">
 
-                <p>
-                    Led the mechanical design of the robot, developing the
-                    chassis, drive components, camera turret, and supporting
-                    hardware in SolidWorks.
-                </p>
-
-            </div>
-
-            <div class="role-item">
-
-                <h3>CAD & Assemblies</h3>
-
-                <p>
-                    Created detailed SolidWorks parts and assemblies to
-                    evaluate component fit, movement, packaging, and overall
-                    system integration.
-                </p>
-
-            </div>
-
-            <div class="role-item">
-
-                <h3>Motion Analysis</h3>
-
-                <p>
-                    Used SolidWorks motion tools to evaluate the robot's
-                    mechanical movement and verify the behavior of the
-                    drive and moving components.
-                </p>
-
-            </div>
-
-            <div class="role-item">
-
-                <h3>FEA</h3>
-
-                <p>
-                    Applied finite element analysis to evaluate structural
-                    behavior and identify potential issues before committing
-                    the design to hardware.
-                </p>
-
-            </div>
-
-            <div class="role-item">
-
-                <h3>Bill of Materials</h3>
-
-                <p>
-                    Developed and maintained the bill of materials while
-                    selecting and organizing the mechanical and electrical
-                    components required to build the system.
-                </p>
-
-            </div>
-
-            <div class="role-item">
-
-                <h3>Team Leadership</h3>
-
-                <p>
-                    Led a four-person engineering team and coordinated the
-                    mechanical design with electrical, controls, and system
-                    requirements.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- DESIGN PROCESS -->
-
-    <section class="section">
-
-        <div class="section-label">
-            04 · DESIGN PROCESS
-        </div>
-
-        <h2>From Concept to Hardware</h2>
-
-        <div class="process">
-
-            <div class="process-step">
-
-                <div class="process-number">
-                    01
+                <div class="component">
+                    <span class="component-title">Arduino</span>
+                    <span class="component-text">
+                        Used an Arduino-based control platform to interface with
+                        sensors and control system functions.
+                    </span>
                 </div>
 
-                <h3>Concept</h3>
-
-                <p>
-                    Established the robot architecture and translated the
-                    project requirements into a workable mechanical concept.
-                </p>
-
-            </div>
-
-            <div class="process-step">
-
-                <div class="process-number">
-                    02
+                <div class="component">
+                    <span class="component-title">Ultrasonic Sensing</span>
+                    <span class="component-text">
+                        Integrated ultrasonic sensing for environmental
+                        detection and obstacle awareness.
+                    </span>
                 </div>
 
-                <h3>CAD</h3>
-
-                <p>
-                    Built the robot in SolidWorks and developed the individual
-                    components and assemblies needed for the system.
-                </p>
-
-            </div>
-
-            <div class="process-step">
-
-                <div class="process-number">
-                    03
+                <div class="component">
+                    <span class="component-title">Camera System</span>
+                    <span class="component-text">
+                        Integrated the camera into the mechanical turret to
+                        provide a mobile observation platform.
+                    </span>
                 </div>
 
-                <h3>Analysis</h3>
-
-                <p>
-                    Used motion analysis and FEA to evaluate mechanical
-                    performance before fabrication.
-                </p>
-
-            </div>
-
-            <div class="process-step">
-
-                <div class="process-number">
-                    04
+                <div class="component">
+                    <span class="component-title">Packaging</span>
+                    <span class="component-text">
+                        Designed around the physical constraints created by
+                        electronics, motors, sensors, and moving components.
+                    </span>
                 </div>
 
-                <h3>Build</h3>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ENGINEERING CHALLENGE
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                06 / ENGINEERING CHALLENGE
+            </p>
+
+            <h2>
+                Building Around Real Constraints
+            </h2>
+
+            <div class="text-box">
 
                 <p>
-                    Fabricated, assembled, integrated, and demonstrated the
-                    completed robot as a functional system.
+                    One of the biggest challenges was balancing the competing
+                    requirements of a mobile robot. The structure needed to be
+                    strong enough to support the camera system and survive
+                    movement, while remaining compact enough for the drive
+                    system and electronics.
+                </p>
+
+                <p>
+                    Every design decision affected another part of the system.
+                    Component placement influenced the center of mass, the
+                    chassis affected packaging, and the drive geometry affected
+                    how the robot moved. This forced the mechanical design to be
+                    developed as part of the complete system rather than as
+                    isolated components.
                 </p>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CONTROL SYSTEM -->
+        <!-- =========================
+             TAKEAWAYS
+             ========================= -->
 
-    <section class="section">
+        <section class="content-section">
 
-        <div class="section-label">
-            05 · CONTROLS & INTEGRATION
-        </div>
+            <p class="section-label">
+                07 / TAKEAWAYS
+            </p>
 
-        <h2>Mechanical Meets Electrical</h2>
+            <h2>
+                What I Built
+            </h2>
 
-        <p>
-            The robot required the mechanical system to work closely with its
-            electronics and controls. Mechanical packaging had to account for
-            motors, sensors, wiring, the control board, and the camera system
-            while leaving enough access for assembly and troubleshooting.
-        </p>
+            <p>
+                This project was one of my first opportunities to lead a
+                complete mechanical system while working directly with a small
+                engineering team. I was responsible for more than just
+                individual CAD parts. I had to think about how the parts moved,
+                how they were manufactured, how they fit together, and how they
+                interacted with the electrical system.
+            </p>
 
-        <p>
-            An Arduino-based Lafvin UNO R3 platform was used for the robot's
-            control system, including an ultrasonic sensor demonstration.
-            The project provided hands-on experience integrating physical
-            hardware with embedded controls rather than treating the
-            mechanical and electrical systems as separate designs.
-        </p>
+            <p>
+                The project strengthened my interest in mechanical design work
+                where CAD, analysis, fabrication, and hands-on problem solving
+                all come together in a physical product.
+            </p>
 
-        <div class="detail-grid">
+        </section>
 
-            <div class="detail-box">
-                <h3>Arduino</h3>
-                <p>
-                    Used an Arduino-based control platform to interface with
-                    sensors and control system functions.
-                </p>
+
+        <!-- =========================
+             SKILLS
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                08 / TOOLS &amp; SKILLS
+            </p>
+
+            <h2>
+                Engineering Toolkit
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill">SolidWorks</div>
+
+                <div class="skill">Motion Analysis</div>
+
+                <div class="skill">FEA</div>
+
+                <div class="skill">3D CAD</div>
+
+                <div class="skill">Mechanical Design</div>
+
+                <div class="skill">System Integration</div>
+
+                <div class="skill">Bill of Materials</div>
+
+                <div class="skill">Prototyping</div>
+
+                <div class="skill">Arduino</div>
+
+                <div class="skill">Ultrasonic Sensors</div>
+
+                <div class="skill">Team Leadership</div>
+
+                <div class="skill">Hardware Development</div>
+
             </div>
 
-            <div class="detail-box">
-                <h3>Ultrasonic Sensing</h3>
-                <p>
-                    Integrated ultrasonic sensing for environmental detection
-                    and obstacle awareness.
-                </p>
-            </div>
+        </section>
 
-            <div class="detail-box">
-                <h3>Camera System</h3>
-                <p>
-                    Integrated the camera into the mechanical turret to provide
-                    a mobile observation platform.
-                </p>
-            </div>
 
-            <div class="detail-box">
-                <h3>Packaging</h3>
-                <p>
-                    Designed around the physical constraints created by
-                    electronics, motors, sensors, and moving components.
-                </p>
-            </div>
+        <!-- =========================
+             FOOTER
+             ========================= -->
+
+        <div class="footer">
+
+            <a href="../index.html">
+                ← BACK TO PORTFOLIO
+            </a>
 
         </div>
 
-    </section>
+
+    </main>
 
 
-    <!-- ENGINEERING CHALLENGE -->
-
-    <section class="section">
-
-        <div class="section-label">
-            06 · ENGINEERING CHALLENGE
-        </div>
-
-        <h2>Building Around Real Constraints</h2>
-
-        <p>
-            One of the biggest challenges was balancing the competing
-            requirements of a mobile robot. The structure needed to be strong
-            enough to support the camera system and survive movement, while
-            remaining compact enough for the drive system and electronics.
-        </p>
-
-        <p>
-            Every design decision affected another part of the system.
-            Component placement influenced the center of mass, the chassis
-            affected packaging, and the drive geometry affected how the robot
-            moved. This forced the mechanical design to be developed as part
-            of the complete system rather than as isolated components.
-        </p>
-
-    </section>
-
-
-    <!-- ENGINEERING TAKEAWAYS -->
-
-    <section class="section">
-
-        <div class="section-label">
-            07 · TAKEAWAYS
-        </div>
-
-        <h2>What I Built</h2>
-
-        <p>
-            This project was one of my first opportunities to lead a complete
-            mechanical system while working directly with a small engineering
-            team. I was responsible for more than just individual CAD parts.
-            I had to think about how the parts moved, how they were
-            manufactured, how they fit together, and how they interacted with
-            the electrical system.
-        </p>
-
-        <p>
-            The project strengthened my interest in mechanical design work
-            where CAD, analysis, fabrication, and hands-on problem solving all
-            come together in a physical product.
-        </p>
-
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section class="section">
-
-        <div class="section-label">
-            08 · TOOLS & SKILLS
-        </div>
-
-        <h2>Engineering Toolkit</h2>
-
-        <div class="skills">
-
-            <div class="skill">SOLIDWORKS</div>
-            <div class="skill">MOTION ANALYSIS</div>
-            <div class="skill">FEA</div>
-            <div class="skill">3D CAD</div>
-            <div class="skill">MECHANICAL DESIGN</div>
-            <div class="skill">SYSTEM INTEGRATION</div>
-            <div class="skill">BILL OF MATERIALS</div>
-            <div class="skill">PROTOTYPING</div>
-            <div class="skill">ARDUINO</div>
-            <div class="skill">ULTRASONIC SENSORS</div>
-            <div class="skill">TEAM LEADERSHIP</div>
-            <div class="skill">HARDWARE DEVELOPMENT</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <a href="../index.html">
-            ← BACK TO PORTFOLIO
-        </a>
-
-    </div>
-
-</main>
-    
 <script>
 (function () {
     const canvas = document.getElementById("bg");
@@ -873,6 +1161,7 @@ body {
     window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(draw, 150); });
 })();
 </script>
-    
+
 </body>
+
 </html>
