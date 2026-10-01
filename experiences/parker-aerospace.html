@@ -1,558 +1,624 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parker Aerospace | Cody Fischer</title>
-
-<style>
-
-    /* =========================
-       PAGE SETUP
-       ========================= */
-
-    body {
-        margin: 0;
-        background: #111;
-        color: white;
-        font-family: Arial, sans-serif;
-        position: relative;
-    }
-
-/* Images for Experience and Project entries */
-.featured-image {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    display: block;
-    margin: 20px auto 25px;
-    border-radius: 4px;
-    filter: grayscale(15%);
-    transition: filter 0.3s ease;
-}
-
-.featured-image:hover {
-    filter: grayscale(0%);
-}
-    .experience-item,
-.project-item {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-    /* =========================
-       TOPOGRAPHIC CONTOUR LINES
-       ========================= */
-#bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-}
-
-
-    /* =========================
-       BACK LINK
-       ========================= */
-
-    .back-link {
-        display: inline-block;
-
-        margin: 40px 50px;
-
-        color: #777;
-
-        text-decoration: none;
-
-        font-family: monospace;
-
-        font-size: 13px;
-
-        letter-spacing: 1px;
-
-        transition: 0.3s ease;
-    }
-
-
-    .back-link:hover {
-        color: #9da99c;
-
-        transform: translateX(-5px);
-    }
-
-
-    /* =========================
-       HERO
-       ========================= */
-
-    .hero {
-        max-width: 1000px;
-
-        margin: 80px auto 0;
-
-        padding: 0 30px 120px;
-    }
-
-
-    .section-label {
-        color: #9da99c;
-
-        letter-spacing: 4px;
-
-        font-size: 12px;
-
-        margin-bottom: 15px;
-    }
-
-
-    .hero h1 {
-        font-size: 72px;
-
-        margin: 0 0 20px;
-
-        line-height: 1;
-
-        transition: 0.3s ease;
-    }
-
-
-    .hero h1:hover {
-        letter-spacing: 4px;
-
-        color: #9da99c;
-    }
-
-
-    .hero-subtitle {
-        font-size: 22px;
-
-        color: #aaa;
-
-        margin: 0 0 15px;
-    }
-
-
-    .hero-date {
-        color: #666;
-
-        font-family: monospace;
-
-        font-size: 13px;
-    }
-
-
-    /* =========================
-       CONTENT
-       ========================= */
-
-    .content {
-        max-width: 1000px;
-
-        margin: 0 auto;
-
-        padding: 0 30px 120px;
-    }
-
-
-    .content-section {
-        padding: 70px 0;
-
-        border-top: 1px solid rgba(157, 169, 156, 0.3);
-    }
-
-
-    .content-section h2 {
-        font-size: 42px;
-
-        margin: 0 0 30px;
-    }
-
-
-    .content-section h3 {
-        font-size: 25px;
-
-        margin: 45px 0 10px;
-
-        transition: 0.3s ease;
-    }
-
-
-    .content-section h3:hover {
-        color: #9da99c;
-    }
-
-
-    .content-section p {
-        max-width: 800px;
-
-        color: #999;
-
-        font-size: 17px;
-
-        line-height: 1.7;
-
-        margin: 0 0 20px;
-    }
-
-
-    /* =========================
-       ENGINEERING WORK
-       ========================= */
-
-    .work-item {
-        display: grid;
-
-        grid-template-columns: 50px 1fr;
-
-        gap: 20px;
-
-        padding: 25px 0;
-
-        border-top: 1px solid rgba(157, 169, 156, 0.15);
-    }
-
-
-    .work-number {
-        color: #666;
-
-        font-family: monospace;
-
-        font-size: 14px;
-    }
-
-
-    .work-item h3 {
-        margin: 0 0 8px;
-
-        font-size: 23px;
-    }
-
-
-    .work-item p {
-        margin: 0;
-
-        font-size: 15px;
-    }
-
-
-    /* =========================
-       SKILLS
-       ========================= */
-
-    .skills {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        gap: 10px;
-
-        margin-top: 25px;
-    }
-
-
-    .skill {
-        border: 1px solid rgba(157, 169, 156, 0.3);
-
-        padding: 10px 15px;
-
-        color: #999;
-
-        font-family: monospace;
-
-        font-size: 13px;
-
-        transition: 0.3s ease;
-    }
-
-
-    .skill:hover {
-        color: #9da99c;
-
-        border-color: #9da99c;
-    }
-
-
-    /* =========================
-       FEATURED WORK
-       ========================= */
-
-    .featured {
-        margin-top: 40px;
-
-        padding: 35px;
-
-        border: 1px solid rgba(157, 169, 156, 0.3);
-
-        transition: 0.3s ease;
-    }
-
-
-    .featured:hover {
-        border-color: rgba(157, 169, 156, 0.7);
-
-        transform: translateX(5px);
-    }
-
-
-    .featured h3 {
-        margin: 0 0 10px;
-
-        font-size: 28px;
-    }
-
-
-    .featured p {
-        margin-bottom: 15px;
-    }
-
-
-    .featured-result {
-        color: #9da99c !important;
-
-        font-family: monospace;
-
-        font-size: 14px !important;
-
-        margin-top: 25px !important;
-    }
-
-
-    /* =========================
-       MOBILE
-       ========================= */
-
-    @media (max-width: 700px) {
-
-        .back-link {
-            margin: 30px 25px;
+    <title>Parker Aerospace | Cody Fischer</title>
+
+    <style>
+
+        /* =========================
+           PAGE SETUP
+           ========================= */
+
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
         }
 
-        .hero {
-            margin-top: 50px;
 
-            padding: 0 25px 80px;
+        /* =========================
+           STREAMLINE BACKGROUND
+           ========================= */
+
+        #bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           BACK LINK
+           ========================= */
+
+        .back-link {
+            display: inline-block;
+            margin: 40px 50px;
+            color: #777;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #9da99c;
+            transform: translateX(-5px);
+        }
+
+
+        /* =========================
+           HERO
+           ========================= */
+
+        .hero {
+            max-width: 1000px;
+            margin: 80px auto 0;
+            padding: 0 30px 120px;
+        }
+
+        .section-label {
+            color: #9da99c;
+            letter-spacing: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 72px;
+            margin: 0 0 20px;
+            line-height: 1;
+            transition: 0.3s ease;
+        }
+
+        .hero h1:hover {
+            letter-spacing: 4px;
+            color: #9da99c;
         }
 
         .hero-subtitle {
-            font-size: 18px;
+            font-size: 22px;
+            color: #aaa;
+            margin: 0 0 15px;
         }
 
+        .hero-date {
+            color: #666;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CONTENT
+           ========================= */
+
         .content {
-            padding: 0 25px 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px 120px;
+        }
+
+        .content-section {
+            padding: 70px 0;
+            border-top: 1px solid rgba(157, 169, 156, 0.3);
         }
 
         .content-section h2 {
-            font-size: 34px;
+            font-size: 42px;
+            margin: 0 0 30px;
         }
 
-    }
+        .content-section h3 {
+            font-size: 25px;
+            margin: 45px 0 10px;
+            transition: 0.3s ease;
+        }
 
-</style>
+        .content-section h3:hover {
+            color: #9da99c;
+        }
 
+        .content-section p {
+            max-width: 800px;
+            color: #999;
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0 0 20px;
+        }
+
+
+        /* =========================
+           FEATURED WORK
+           ========================= */
+
+        .featured {
+            margin-top: 40px;
+            padding: 35px;
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            transition: 0.3s ease;
+        }
+
+        .featured:hover {
+            border-color: rgba(157, 169, 156, 0.7);
+            transform: translateX(5px);
+        }
+
+        .featured h3 {
+            margin: 0 0 10px;
+            font-size: 28px;
+        }
+
+        .featured p {
+            margin-bottom: 15px;
+        }
+
+        .featured-result {
+            color: #9da99c !important;
+            font-family: monospace;
+            font-size: 14px !important;
+            margin-top: 25px !important;
+        }
+
+
+        /* =========================
+           SKILLS
+           ========================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            padding: 10px 15px;
+            color: #999;
+            font-family: monospace;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
+
+        .skill:hover {
+            color: #9da99c;
+            border-color: #9da99c;
+        }
+
+
+        /* =========================
+           FEATURED IMAGE
+           ========================= */
+
+        .featured-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            display: block;
+            margin: 20px auto 25px;
+            border: 4px solid rgba(157, 169, 156, 0.3);
+            border-radius: 4px;
+            filter: grayscale(15%);
+            transition: filter 0.3s ease, border-color 0.3s ease;
+        }
+
+        .featured-image:hover {
+            filter: grayscale(0%);
+            border-color: rgba(157, 169, 156, 0.7);
+        }
+
+
+        /* =========================
+           TEXT BOX
+           ========================= */
+
+        .text-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 3px solid rgba(157, 169, 156, 0.6);
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .text-box:hover {
+            border-color: #9da99c;
+        }
+
+        .text-box p {
+            color: white;
+        }
+
+        .text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           STAT ROW + HIGHLIGHTS
+           ========================= */
+
+        .stat-row,
+        .highlight-grid {
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            background: rgba(17, 17, 17, 0.6);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #9da99c;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            display: block;
+            color: #999;
+            font-family: monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .highlight {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.2);
+            background: rgba(17, 17, 17, 0.6);
+            color: #ddd;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: 0.3s ease;
+        }
+
+        .highlight:hover {
+            border-color: #9da99c;
+            transform: translateX(4px);
+        }
+
+        .highlight-tag {
+            display: block;
+            color: #9da99c;
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .back-link {
+                margin: 30px 25px;
+            }
+
+            .hero {
+                margin-top: 50px;
+                padding: 0 25px 80px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 0 25px 80px;
+            }
+
+            .content-section h2 {
+                font-size: 34px;
+            }
+
+            .featured {
+                padding: 25px;
+            }
+
+            .stat-row,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
-    
 <canvas id="bg"></canvas>
 
-<!-- =========================
-     BACK TO PORTFOLIO
-     ========================= -->
 
-<a href="../index.html" class="back-link">
-    ← BACK TO PORTFOLIO
-</a>
+    <!-- =========================
+         BACK TO PORTFOLIO
+         ========================= -->
 
-
-<!-- =========================
-     HERO
-     ========================= -->
-
-<section class="hero">
-
-    <p class="section-label">
-        ENGINEERING EXPERIENCE
-    </p>
-
-    <h1>
-        PARKER AEROSPACE
-    </h1>
-
-    <p class="hero-subtitle">
-        Mechanical Engineering Intern
-    </p>
-
-    <p class="hero-date">
-        MAY 2026 — PRESENT
-    </p>
-
-</section>
-
-
-<!-- =========================
-     CONTENT
-     ========================= -->
-
-<main class="content">
+    <a href="../index.html" class="back-link">
+        ← BACK TO PORTFOLIO
+    </a>
 
 
     <!-- =========================
-         OVERVIEW
+         HERO
          ========================= -->
 
-    <section class="content-section">
+    <section class="hero">
 
         <p class="section-label">
-            01 / OVERVIEW
+            ENGINEERING EXPERIENCE
         </p>
 
-        <h2>
-            Aerospace Engineering
-        </h2>
+        <h1>
+            PARKER AEROSPACE
+        </h1>
 
-        <p>
-            I work as a Mechanical Engineering Intern at Parker Aerospace
-            supporting the design, analysis, documentation, and production
-            of aerospace camera and power systems.
+        <p class="hero-subtitle">
+            Mechanical Engineering Intern
         </p>
 
-        <p>
-            My work spans mechanical design, engineering analysis,
-            manufacturing support, sustaining engineering, and
-            production-level engineering changes. I work closely with
-            mechanical and electrical engineers, systems engineers,
-            technicians, machinists, and vendors to move hardware from
-            engineering concepts into production.
+        <p class="hero-date">
+            MAY 2026 — PRESENT
         </p>
 
     </section>
 
-    <!-- =========================
-         FEATURED WORK
-         ========================= -->
-
-    <section class="content-section">
-
-        <p class="section-label">
-            02 / HIGHLIGHTED PROJECTS
-        </p>
-
-        <h2>
-            Engineering Projects
-        </h2>
-
-
-        <div class="featured">
-
-            <h3>
-                Emergency Battery Heater Blanket Redesign
-            </h3>
-<img src="../images/249.jpeg"
-     alt="EBatt"
-     class="featured-image">
-            <p>
-                Redesigned an aerospace battery heater blanket to improve
-                manufacturability and assembly while addressing failure
-                modes and reducing the potential for human error during
-                installation.
-            </p>
-
-            <p>
-                Developed requirements, evaluated the existing design,
-                created the redesigned hardware in SolidWorks, supported
-                prototype development, and performed thermal analysis to
-                evaluate the design.
-            </p>
-
-            <p class="featured-result">
-                PROJECTED ANNUAL SAVINGS: ~$200,000
-            </p>
-
-        </div>
-
-
-        <div class="featured">
-            </h3>
-                3rd Generation HD Camera
-            </h3>
-<img src="../images/t9.jpeg"
-     alt="t9"
-     class="featured-image">
-            <p>
-                Contributed to the design, analysis, and production support of
-                Parker Aerospace's 3rd Generation HD Camera system
-                for aerospace applications.
-            </p>
-
-            <p>
-                 Designed and modifying components and assemblies in SolidWorks,
-                 developing engineering drawings, applying GD&T, performing
-                 tolerance stack-ups analyses at the component level, and 
-                 supporting structural, vibration, and thermal analysis in ANSYS.
-                 Working closely with engineers, technicians, machinists, and 
-                 vendors to move designs into production.
-            </p>
-
-        </div>
-    </section>
-
 
     <!-- =========================
-         SKILLS
+         CONTENT
          ========================= -->
 
-    <section class="content-section">
-
-        <p class="section-label">
-            04 / TOOLS & SKILLS
-        </p>
-
-        <h2>
-            Engineering Toolkit
-        </h2>
-
-        <div class="skills">
-
-            <div class="skill">SolidWorks</div>
-
-            <div class="skill">ANSYS</div>
-
-            <div class="skill">GD&T</div>
-
-            <div class="skill">Tolerance Stack-ups</div>
-
-            <div class="skill">Engineering Drawings</div>
-
-            <div class="skill">Mechanical Design</div>
-
-            <div class="skill">Thermal Analysis</div>
-
-            <div class="skill">Structural Analysis</div>
-
-            <div class="skill">Vibration Analysis</div>
-
-            <div class="skill">Manufacturing</div>
-
-            <div class="skill">Sustaining Engineering</div>
-
-            <div class="skill">Engineering Change Orders</div>
-
-        </div>
-
-    </section>
+    <main class="content">
 
 
-</main>
+        <!-- =========================
+             OVERVIEW
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                01 / OVERVIEW
+            </p>
+
+            <h2>
+                Aerospace Engineering
+            </h2>
+
+            <img src="../images/t9.jpeg"
+                 alt="Parker Aerospace HD Camera"
+                 class="featured-image">
+
+            <div class="text-box">
+
+                <p>
+                    I work as a Mechanical Engineering Intern at Parker Aerospace
+                    supporting the design, analysis, documentation, and production
+                    of aerospace camera and power systems.
+                </p>
+
+                <p>
+                    My work spans mechanical design, engineering analysis,
+                    manufacturing support, sustaining engineering, and
+                    production-level engineering changes. I work closely with
+                    mechanical and electrical engineers, systems engineers,
+                    technicians, machinists, and vendors to move hardware from
+                    engineering concepts into production.
+                </p>
+
+            </div>
+
+            <div class="stat-row">
+
+                <div class="stat">
+                    <span class="stat-number">~$200K</span>
+                    <span class="stat-label">PROJECTED ANNUAL SAVINGS</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">PRODUCT PROGRAMS SUPPORTED</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">ANALYSIS TYPES: THERMAL, STRUCTURAL, VIBRATION</span>
+                </div>
+
+            </div>
+
+            <div class="highlight-grid">
+
+                <div class="highlight">
+                    <span class="highlight-tag">DESIGN</span>
+                    Designed and modified components and assemblies in
+                    SolidWorks, applying GD&amp;T and tolerance stack-ups.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">ANALYSIS</span>
+                    Supported thermal, structural, and vibration analysis
+                    in ANSYS.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">DOCUMENTATION</span>
+                    Developed engineering drawings and supported engineering
+                    change orders for production hardware.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">PRODUCTION</span>
+                    Worked with technicians, machinists, and vendors to move
+                    designs from concept into production.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURED WORK
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                02 / HIGHLIGHTED PROJECTS
+            </p>
+
+            <h2>
+                Engineering Projects
+            </h2>
+
+
+            <div class="featured">
+
+                <h3>
+                    Emergency Battery Heater Blanket Redesign
+                </h3>
+
+                <img src="../images/249.jpeg"
+                     alt="EBatt"
+                     class="featured-image">
+
+                <p>
+                    Redesigned an aerospace battery heater blanket to improve
+                    manufacturability and assembly while addressing failure
+                    modes and reducing the potential for human error during
+                    installation.
+                </p>
+
+                <p>
+                    Developed requirements, evaluated the existing design,
+                    created the redesigned hardware in SolidWorks, supported
+                    prototype development, and performed thermal analysis to
+                    evaluate the design.
+                </p>
+
+                <p class="featured-result">
+                    PROJECTED ANNUAL SAVINGS: ~$200,000
+                </p>
+
+            </div>
+
+
+            <div class="featured">
+
+                <h3>
+                    3rd Generation HD Camera
+                </h3>
+
+                <img src="../images/t9.jpeg"
+                     alt="3rd Generation HD Camera"
+                     class="featured-image">
+
+                <p>
+                    Contributed to the design, analysis, and production support of
+                    Parker Aerospace's 3rd Generation HD Camera system
+                    for aerospace applications.
+                </p>
+
+                <p>
+                    Designed and modified components and assemblies in SolidWorks,
+                    developed engineering drawings, applied GD&amp;T, performed
+                    tolerance stack-up analyses at the component level, and
+                    supported structural, vibration, and thermal analysis in ANSYS.
+                    Worked closely with engineers, technicians, machinists, and
+                    vendors to move designs into production.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS
+             ========================= -->
+
+        <section class="content-section">
+
+            <p class="section-label">
+                03 / TOOLS & SKILLS
+            </p>
+
+            <h2>
+                Engineering Toolkit
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill">SolidWorks</div>
+
+                <div class="skill">ANSYS</div>
+
+                <div class="skill">GD&amp;T</div>
+
+                <div class="skill">Tolerance Stack-ups</div>
+
+                <div class="skill">Engineering Drawings</div>
+
+                <div class="skill">Mechanical Design</div>
+
+                <div class="skill">Thermal Analysis</div>
+
+                <div class="skill">Structural Analysis</div>
+
+                <div class="skill">Vibration Analysis</div>
+
+                <div class="skill">Manufacturing</div>
+
+                <div class="skill">Sustaining Engineering</div>
+
+                <div class="skill">Engineering Change Orders</div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
 <script>
 (function () {
     const canvas = document.getElementById("bg");
@@ -653,7 +719,7 @@
     window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(draw, 150); });
 })();
 </script>
-    
+
 </body>
 
 </html>
