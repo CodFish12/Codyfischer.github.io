@@ -23,16 +23,18 @@
 
 
         /* =========================
-           TOPOGRAPHIC CONTOUR LINES
+           STREAMLINE BACKGROUND
            ========================= */
-#bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-}
+
+        #bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
 
         /* =========================
            BACK LINK
@@ -40,26 +42,17 @@
 
         .back-link {
             display: inline-block;
-
             margin: 40px 50px;
-
             color: #777;
-
             text-decoration: none;
-
             font-family: monospace;
-
             font-size: 13px;
-
             letter-spacing: 1px;
-
             transition: 0.3s ease;
         }
 
-
         .back-link:hover {
             color: #9da99c;
-
             transform: translateX(-5px);
         }
 
@@ -70,56 +63,38 @@
 
         .hero {
             max-width: 1000px;
-
             margin: 80px auto 0;
-
             padding: 0 30px 120px;
         }
 
-
         .section-label {
             color: #9da99c;
-
             letter-spacing: 4px;
-
             font-size: 12px;
-
             margin-bottom: 15px;
         }
 
-
         .hero h1 {
             font-size: 72px;
-
             margin: 0 0 20px;
-
             line-height: 1;
-
             transition: 0.3s ease;
         }
 
-
         .hero h1:hover {
             letter-spacing: 4px;
-
             color: #9da99c;
         }
 
-
         .hero-subtitle {
             font-size: 22px;
-
             color: #aaa;
-
             margin: 0 0 15px;
         }
 
-
         .hero-date {
             color: #666;
-
             font-family: monospace;
-
             font-size: 13px;
         }
 
@@ -130,50 +105,35 @@
 
         .content {
             max-width: 1000px;
-
             margin: 0 auto;
-
             padding: 0 30px 120px;
         }
 
-
         .content-section {
             padding: 70px 0;
-
             border-top: 1px solid rgba(157, 169, 156, 0.3);
         }
 
-
         .content-section h2 {
             font-size: 42px;
-
             margin: 0 0 30px;
         }
 
-
         .content-section h3 {
             font-size: 25px;
-
             margin: 45px 0 10px;
-
             transition: 0.3s ease;
         }
-
 
         .content-section h3:hover {
             color: #9da99c;
         }
 
-
         .content-section p {
             max-width: 800px;
-
             color: #999;
-
             font-size: 17px;
-
             line-height: 1.7;
-
             margin: 0 0 20px;
         }
 
@@ -184,36 +144,25 @@
 
         .work-item {
             display: grid;
-
             grid-template-columns: 50px 1fr;
-
             gap: 20px;
-
             padding: 25px 0;
-
             border-top: 1px solid rgba(157, 169, 156, 0.15);
         }
 
-
         .work-number {
             color: #666;
-
             font-family: monospace;
-
             font-size: 14px;
         }
 
-
         .work-item h3 {
             margin: 0 0 8px;
-
             font-size: 23px;
         }
 
-
         .work-item p {
             margin: 0;
-
             font-size: 15px;
         }
 
@@ -224,41 +173,29 @@
 
         .featured {
             margin-top: 40px;
-
             padding: 35px;
-
             border: 1px solid rgba(157, 169, 156, 0.3);
-
             transition: 0.3s ease;
         }
 
-
         .featured:hover {
             border-color: rgba(157, 169, 156, 0.7);
-
             transform: translateX(5px);
         }
 
-
         .featured h3 {
             margin: 0 0 10px;
-
             font-size: 28px;
         }
-
 
         .featured p {
             margin-bottom: 15px;
         }
 
-
         .research-tools {
             color: #9da99c !important;
-
             font-family: monospace;
-
             font-size: 14px !important;
-
             margin-top: 25px !important;
         }
 
@@ -269,34 +206,142 @@
 
         .skills {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 10px;
-
             margin-top: 25px;
         }
 
-
         .skill {
             border: 1px solid rgba(157, 169, 156, 0.3);
-
             padding: 10px 15px;
-
             color: #999;
-
             font-family: monospace;
-
             font-size: 13px;
-
             transition: 0.3s ease;
         }
 
-
         .skill:hover {
             color: #9da99c;
-
             border-color: #9da99c;
+        }
+
+
+        /* =========================
+           FEATURED IMAGE
+           ========================= */
+
+        .featured-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            display: block;
+            margin: 20px auto 25px;
+            border: 4px solid rgba(157, 169, 156, 0.3);
+            border-radius: 4px;
+            filter: grayscale(15%);
+            transition: filter 0.3s ease, border-color 0.3s ease;
+        }
+
+        .featured-image:hover {
+            filter: grayscale(0%);
+            border-color: rgba(157, 169, 156, 0.7);
+        }
+
+
+        /* =========================
+           TEXT BOX
+           ========================= */
+
+        .text-box {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 3px solid rgba(157, 169, 156, 0.6);
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .text-box:hover {
+            border-color: #9da99c;
+        }
+
+        .text-box p {
+            color: white;
+        }
+
+        .text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           STAT ROW + HIGHLIGHTS
+           ========================= */
+
+        .stat-row,
+        .highlight-grid {
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.3);
+            background: rgba(17, 17, 17, 0.6);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #9da99c;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            display: block;
+            color: #999;
+            font-family: monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .highlight {
+            padding: 20px;
+            border: 1px solid rgba(157, 169, 156, 0.2);
+            background: rgba(17, 17, 17, 0.6);
+            color: #ddd;
+            font-size: 15px;
+            line-height: 1.6;
+            transition: 0.3s ease;
+        }
+
+        .highlight:hover {
+            border-color: #9da99c;
+            transform: translateX(4px);
+        }
+
+        .highlight-tag {
+            display: block;
+            color: #9da99c;
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
         }
 
 
@@ -312,7 +357,6 @@
 
             .hero {
                 margin-top: 50px;
-
                 padding: 0 25px 80px;
             }
 
@@ -332,6 +376,15 @@
                 font-size: 34px;
             }
 
+            .featured {
+                padding: 25px;
+            }
+
+            .stat-row,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
 
     </style>
@@ -341,6 +394,7 @@
 
 <body>
 <canvas id="bg"></canvas>
+
 
     <!-- =========================
          BACK TO PORTFOLIO
@@ -366,7 +420,7 @@
         </h1>
 
         <p class="hero-subtitle">
-            Intern Advisor & Researcher
+            Intern Advisor &amp; Researcher
         </p>
 
         <p class="hero-date">
@@ -394,21 +448,78 @@
             </p>
 
             <h2>
-                Research & Engineering
+                Research &amp; Engineering
             </h2>
 
-            <p>
-                Through the NASA Space Grant Consortium, I work alongside
-                faculty researchers on projects involving planetary science,
-                computational analysis, and advanced aerospace manufacturing.
-            </p>
+            <!-- Add a photo here, then uncomment:
+            <img src="../images/YOUR-NASA-IMAGE.jpeg"
+                 alt="NASA Space Grant"
+                 class="featured-image">
+            -->
 
-            <p>
-                Alongside my research, I serve as an Intern Advisor, helping
-                undergraduate research interns navigate research expectations,
-                professional development, and the challenges that come with
-                entering technical research.
-            </p>
+            <div class="text-box">
+
+                <p>
+                    Through the NASA Space Grant Consortium, I work alongside
+                    faculty researchers on projects involving planetary science,
+                    computational analysis, and advanced aerospace manufacturing.
+                </p>
+
+                <p>
+                    Alongside my research, I serve as an Intern Advisor, helping
+                    undergraduate research interns navigate research expectations,
+                    professional development, and the challenges that come with
+                    entering technical research.
+                </p>
+
+            </div>
+
+            <div class="stat-row">
+
+                <div class="stat">
+                    <span class="stat-number">~8 YRS</span>
+                    <span class="stat-label">OF MAVEN MAGNETOMETER DATA ANALYZED</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">&lt;170 km</span>
+                    <span class="stat-label">PERIAPSIS ALTITUDE STUDIED</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">RESEARCH PROJECTS</span>
+                </div>
+
+            </div>
+
+            <div class="highlight-grid">
+
+                <div class="highlight">
+                    <span class="highlight-tag">AI + DESIGN</span>
+                    Combining machine learning with topology optimization
+                    for LPBF-manufacturable aerospace structures.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">PLANETARY SCIENCE</span>
+                    Characterized Mars' crustal magnetic fields using
+                    MAVEN spacecraft data.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">COMPUTING</span>
+                    Processed large scientific datasets with Fortran, IDL,
+                    SuperMongo, Bash, and SSH.
+                </div>
+
+                <div class="highlight">
+                    <span class="highlight-tag">MENTORING</span>
+                    Advise undergraduate research interns on expectations,
+                    professional development, and communication.
+                </div>
+
+            </div>
 
         </section>
 
@@ -432,6 +543,12 @@
                 <h3>
                     Machine Learning + Topology Optimization
                 </h3>
+
+                <!-- Optional image:
+                <img src="../images/YOUR-ML-IMAGE.jpeg"
+                     alt="Machine Learning + Topology Optimization"
+                     class="featured-image">
+                -->
 
                 <p>
                     My current research focuses on combining machine learning
@@ -484,6 +601,12 @@
                 <h3>
                     MAVEN Magnetometer Data Analysis
                 </h3>
+
+                <!-- Optional image (a Mercator map would look great here):
+                <img src="../images/YOUR-MARS-IMAGE.jpeg"
+                     alt="MAVEN Magnetometer Data Analysis"
+                     class="featured-image">
+                -->
 
                 <p>
                     During the previous academic year, I worked with
@@ -621,7 +744,7 @@
         <section class="content-section">
 
             <p class="section-label">
-                05 / TOOLS & SKILLS
+                05 / TOOLS &amp; SKILLS
             </p>
 
             <h2>
@@ -660,7 +783,8 @@
 
 
     </main>
-    
+
+
 <script>
 (function () {
     const canvas = document.getElementById("bg");
