@@ -139,60 +139,6 @@
 
 
         /* =========================
-           WORK ITEMS (numbered list)
-           ========================= */
-
-        .work-item {
-            display: grid;
-            grid-template-columns: 50px 1fr;
-            gap: 20px;
-            padding: 25px 0;
-            border-top: 1px solid rgba(157, 169, 156, 0.15);
-        }
-
-        .work-number {
-            color: #666;
-            font-family: monospace;
-            font-size: 14px;
-        }
-
-        .work-item h3 {
-            margin: 0 0 8px;
-            font-size: 23px;
-        }
-
-        .work-item p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           REQUIREMENTS
-           ========================= */
-
-        .requirement {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 20px;
-            padding: 25px 0;
-            border-top: 1px solid rgba(157, 169, 156, 0.15);
-        }
-
-        .requirement-title {
-            color: #9da99c;
-            font-family: monospace;
-            font-size: 13px;
-            letter-spacing: 1px;
-        }
-
-        .requirement p {
-            margin: 0;
-            font-size: 15px;
-        }
-
-
-        /* =========================
            FEATURED WORK
            ========================= */
 
@@ -222,78 +168,6 @@
             font-family: monospace;
             font-size: 14px !important;
             margin-top: 25px !important;
-        }
-
-
-        /* =========================
-           COMPONENT GRID
-           ========================= */
-
-        .component-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 35px;
-        }
-
-        .component {
-            padding: 20px;
-            border: 1px solid rgba(157, 169, 156, 0.2);
-            transition: 0.3s ease;
-        }
-
-        .component:hover {
-            border-color: #9da99c;
-            transform: translateX(4px);
-        }
-
-        .component-title {
-            display: block;
-            color: #ddd;
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .component-text {
-            display: block;
-            color: #999;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-
-        /* =========================
-           PROCESS
-           ========================= */
-
-        .process {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 35px;
-        }
-
-        .process-step {
-            border-top: 2px solid #9da99c;
-            padding-top: 20px;
-        }
-
-        .process-number {
-            color: #666;
-            font-family: monospace;
-            font-size: 13px;
-        }
-
-        .process-step h3 {
-            font-size: 19px;
-            margin: 12px 0 10px;
-        }
-
-        .process-step p {
-            font-size: 14px;
-            margin: 0;
-            line-height: 1.6;
         }
 
 
@@ -346,126 +220,6 @@
 
 
         /* =========================
-           TEXT BOX
-           ========================= */
-
-        .text-box {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 30px;
-            border: 3px solid rgba(157, 169, 156, 0.6);
-            border-radius: 4px;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-
-        .text-box:hover {
-            border-color: #9da99c;
-        }
-
-        .text-box p {
-            color: white;
-        }
-
-        .text-box p:last-child {
-            margin-bottom: 0;
-        }
-
-
-        /* =========================
-           STAT ROW + HIGHLIGHTS
-           ========================= */
-
-        .stat-row,
-        .highlight-grid {
-            max-width: 700px;
-            margin: 25px auto 0;
-        }
-
-        .stat-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .stat {
-            padding: 20px;
-            border: 1px solid rgba(157, 169, 156, 0.3);
-            background: rgba(17, 17, 17, 0.6);
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 36px;
-            font-weight: bold;
-            color: #9da99c;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            display: block;
-            color: #999;
-            font-family: monospace;
-            font-size: 11px;
-            letter-spacing: 1px;
-            line-height: 1.5;
-        }
-
-        .highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .highlight {
-            padding: 20px;
-            border: 1px solid rgba(157, 169, 156, 0.2);
-            background: rgba(17, 17, 17, 0.6);
-            color: #ddd;
-            font-size: 15px;
-            line-height: 1.6;
-            transition: 0.3s ease;
-        }
-
-        .highlight:hover {
-            border-color: #9da99c;
-            transform: translateX(4px);
-        }
-
-        .highlight-tag {
-            display: block;
-            color: #9da99c;
-            font-family: monospace;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           FOOTER
-           ========================= */
-
-        .footer {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(157, 169, 156, 0.3);
-        }
-
-        .footer a {
-            color: #777;
-            text-decoration: none;
-            font-family: monospace;
-            font-size: 13px;
-            transition: 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: #9da99c;
-        }
-
-
-        /* =========================
            MOBILE
            ========================= */
 
@@ -498,29 +252,6 @@
 
             .featured {
                 padding: 25px;
-            }
-
-            .stat-row,
-            .highlight-grid,
-            .component-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .requirement {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .process {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-        @media (max-width: 450px) {
-
-            .process {
-                grid-template-columns: 1fr;
             }
 
         }
@@ -589,112 +320,56 @@
                 Characterizing Optical Hardware
             </h2>
 
-            <!-- Add a photo here (CAD render, prototype, etc.), then uncomment:
-            <img src="../images/YOUR-RL-IMAGE.jpeg"
-                 alt="Rocket Lab focal plane characterization platform"
-                 class="featured-image">
-            -->
+            <p>
+                For senior design, my team is developing a modular focal plane
+                characterization platform for Rocket Lab Optical Systems. The
+                system is intended to provide a flexible alternative to
+                commercial characterization stations that can cost tens to
+                hundreds of thousands of dollars.
+            </p>
 
-            <div class="text-box">
+            <p>
+                The platform will allow focal plane assemblies to be evaluated
+                across multiple optical and electrical performance
+                characteristics, including modulation transfer function,
+                quantum efficiency, linearity, gain states, and noise.
+            </p>
 
-                <p>
-                    For senior design, my team is developing a modular focal plane
-                    characterization platform for Rocket Lab Optical Systems. The
-                    system is intended to provide a flexible alternative to
-                    commercial characterization stations that can cost tens to
-                    hundreds of thousands of dollars.
-                </p>
-
-                <p>
-                    The platform will allow focal plane assemblies to be evaluated
-                    across multiple optical and electrical performance
-                    characteristics, including modulation transfer function,
-                    quantum efficiency, linearity, gain states, and noise.
-                </p>
-
-                <p>
-                    My role is focused on the mechanical design and integration of
-                    the system, while also leading team integration and project
-                    safety. This includes developing the mechanical architecture,
-                    evaluating requirements and design trades, building prototypes,
-                    and coordinating the interfaces between mechanical, optical,
-                    and electrical subsystems.
-                </p>
-
-            </div>
-
-            <div class="stat-row">
-
-                <div class="stat">
-                    <span class="stat-number">~0.5 µm</span>
-                    <span class="stat-label">TRANSLATION REQUIREMENT</span>
-                </div>
-
-                <div class="stat">
-                    <span class="stat-number">-10 / 50°C</span>
-                    <span class="stat-label">OPERATING TEMPERATURE RANGE</span>
-                </div>
-
-                <div class="stat">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">ROLES: MECHANICAL, INTEGRATION, SAFETY</span>
-                </div>
-
-            </div>
-
-            <div class="highlight-grid">
-
-                <div class="highlight">
-                    <span class="highlight-tag">MECHANICAL</span>
-                    Designing the mechanical architecture and interfaces in
-                    SolidWorks for a compact precision test platform.
-                </div>
-
-                <div class="highlight">
-                    <span class="highlight-tag">INTEGRATION</span>
-                    Coordinating mechanical, optical, electrical, and software
-                    subsystems toward shared requirements.
-                </div>
-
-                <div class="highlight">
-                    <span class="highlight-tag">PROTOTYPING</span>
-                    Building early prototypes with 3D printing and planning
-                    final parts around available machining.
-                </div>
-
-                <div class="highlight">
-                    <span class="highlight-tag">SAFETY</span>
-                    Defining hazards and safe operating procedures for
-                    fabrication, assembly, and runtime.
-                </div>
-
-            </div>
+            <p>
+                My role is focused on the mechanical design and integration of
+                the system, while also leading team integration and project
+                safety. This includes developing the mechanical architecture,
+                evaluating requirements and design trades, building prototypes,
+                and coordinating the interfaces between mechanical, optical,
+                and electrical subsystems.
+            </p>
 
         </section>
 
 
         <!-- =========================
-             FEATURED PROJECT
+             FEATURED WORK
              ========================= -->
 
         <section class="content-section">
 
             <p class="section-label">
-                02 / FEATURED WORK
+                02 / HIGHLIGHTED PROJECTS
             </p>
 
             <h2>
-                Modular Focal Plane Platform
+                Engineering Projects
             </h2>
+
 
             <div class="featured">
 
                 <h3>
-                    A modular test platform for optical detector characterization
+                    Modular Focal Plane Platform
                 </h3>
 
-                <!-- Optional image:
-                <img src="../images/YOUR-PLATFORM-IMAGE.jpeg"
+                <!-- Optional: add an image (CAD render, prototype, etc.), or delete this block
+                <img src="../images/YOUR-RL-IMAGE.jpeg"
                      alt="Modular focal plane platform"
                      class="featured-image">
                 -->
@@ -708,235 +383,137 @@
                     environment.
                 </p>
 
-                <div class="component-grid">
-
-                    <div class="component">
-                        <span class="component-title">Precision Motion</span>
-                        <span class="component-text">
-                            Mechanical system designed around approximately
-                            0.5 µm translation requirements and sub-pixel
-                            positioning stability.
-                        </span>
-                    </div>
-
-                    <div class="component">
-                        <span class="component-title">Optical Interface</span>
-                        <span class="component-text">
-                            Mechanical integration of the focal plane with
-                            optical components, illumination hardware, and the
-                            characterization path.
-                        </span>
-                    </div>
-
-                    <div class="component">
-                        <span class="component-title">Environmental Range</span>
-                        <span class="component-text">
-                            Designed around an operating temperature range of
-                            approximately -10°C to 50°C.
-                        </span>
-                    </div>
-
-                    <div class="component">
-                        <span class="component-title">System Integration</span>
-                        <span class="component-text">
-                            Mechanical, optical, electrical, and software
-                            subsystems must function together as one test
-                            platform.
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             REQUIREMENTS
-             ========================= -->
-
-        <section class="content-section">
-
-            <p class="section-label">
-                03 / ENGINEERING REQUIREMENTS
-            </p>
-
-            <h2>
-                Design Constraints
-            </h2>
-
-            <p>
-                The design process begins with translating the sponsor's
-                characterization requirements into mechanical requirements that
-                can be designed, fabricated, and tested.
-            </p>
-
-            <div class="requirement">
-                <div class="requirement-title">POSITIONING</div>
                 <p>
-                    Provide approximately 0.5 µm translation capability with
-                    sufficient stability for sub-pixel optical characterization.
+                    The mechanical system is designed around approximately
+                    0.5 µm translation requirements and sub-pixel positioning
+                    stability. It integrates the focal plane with the optical
+                    components, illumination hardware, and characterization
+                    path, and is designed for an operating temperature range of
+                    approximately -10°C to 50°C.
                 </p>
-            </div>
 
-            <div class="requirement">
-                <div class="requirement-title">ENVIRONMENT</div>
-                <p>
-                    Support operation across approximately -10°C to 50°C while
-                    maintaining mechanical and optical alignment.
+                <p class="featured-result">
+                    ~0.5 µm TRANSLATION · -10°C TO 50°C OPERATING RANGE
                 </p>
+
             </div>
 
-            <div class="requirement">
-                <div class="requirement-title">CLEANROOM</div>
+
+            <div class="featured">
+
+                <h3>
+                    Design Constraints &amp; Requirements
+                </h3>
+
+                <!-- Optional image:
+                <img src="../images/YOUR-IMAGE.jpeg"
+                     alt="Design Constraints and Requirements"
+                     class="featured-image">
+                -->
+
                 <p>
-                    Develop the system for compatibility with cleanroom
-                    operation and appropriate material and assembly practices.
+                    The design process begins with translating the sponsor's
+                    characterization requirements into mechanical requirements
+                    that can be designed, fabricated, and tested.
                 </p>
-            </div>
 
-            <div class="requirement">
-                <div class="requirement-title">MANUFACTURING</div>
                 <p>
-                    Design components that can be fabricated and assembled
-                    using available machining and prototyping capabilities.
+                    Key requirements include approximately 0.5 µm translation
+                    with sufficient stability for sub-pixel optical
+                    characterization, and operation across approximately -10°C
+                    to 50°C while maintaining mechanical and optical alignment.
+                    The system must also be compatible with cleanroom operation,
+                    materials, and assembly practices.
                 </p>
-            </div>
 
-            <div class="requirement">
-                <div class="requirement-title">INTEGRATION</div>
                 <p>
-                    Maintain defined mechanical interfaces between optics,
+                    Components have to be fabricated and assembled using
+                    available machining and prototyping capabilities, with
+                    defined mechanical interfaces between the optics,
                     electronics, motion components, and the focal plane.
                 </p>
+
             </div>
 
-        </section>
 
+            <div class="featured">
 
-        <!-- =========================
-             MECHANICAL ENGINEERING
-             ========================= -->
+                <h3>
+                    Mechanical Design &amp; Integration
+                </h3>
 
-        <section class="content-section">
+                <!-- Optional image:
+                <img src="../images/YOUR-IMAGE.jpeg"
+                     alt="Mechanical Design and Integration"
+                     class="featured-image">
+                -->
 
-            <p class="section-label">
-                04 / MECHANICAL ENGINEERING
-            </p>
+                <p>
+                    I'm developing the mechanical layout and interfaces required
+                    to position the focal plane, optical components, actuators,
+                    and supporting hardware within a compact test platform. I'm
+                    creating the system and its components in SolidWorks,
+                    developing assemblies, evaluating component interfaces, and
+                    preparing the design for fabrication.
+                </p>
 
-            <h2>
-                My Role
-            </h2>
+                <p>
+                    Design decisions are made by weighing requirements, cost,
+                    schedule, manufacturability, material selection, and system
+                    integration. I'm building early prototypes using 3D printing
+                    and planning final components around available machining
+                    capabilities, including manual milling, turning, drilling,
+                    and sawing.
+                </p>
 
+                <p>
+                    I'm also developing manufacturing drawings and applying
+                    dimensioning and GD&amp;T practices to communicate design
+                    requirements to fabrication, and coordinating mechanical
+                    interfaces with the optical, electrical, and software
+                    portions of the project so the complete system works toward
+                    the same requirements.
+                </p>
 
-            <div class="work-item">
-                <div class="work-number">01</div>
-                <div>
-                    <h3>Mechanical Architecture</h3>
-                    <p>
-                        Developing the mechanical layout and interfaces required
-                        to position the focal plane, optical components,
-                        actuators, and supporting hardware within a compact test
-                        platform.
-                    </p>
-                </div>
+                <p class="featured-result">
+                    ROLES: MECHANICAL ENGINEER · INTEGRATION LEAD · SAFETY LEAD
+                </p>
+
             </div>
 
-            <div class="work-item">
-                <div class="work-number">02</div>
-                <div>
-                    <h3>CAD &amp; Design</h3>
-                    <p>
-                        Creating the mechanical system and components in
-                        SolidWorks, developing assemblies, evaluating component
-                        interfaces, and preparing the design for fabrication.
-                    </p>
-                </div>
+
+            <div class="featured">
+
+                <h3>
+                    Analysis &amp; Validation
+                </h3>
+
+                <!-- Optional image:
+                <img src="../images/YOUR-IMAGE.jpeg"
+                     alt="Analysis and Validation"
+                     class="featured-image">
+                -->
+
+                <p>
+                    As the mechanical design develops, the next stage is to
+                    validate the structure and thermal behavior of the platform
+                    through engineering analysis and physical testing.
+                </p>
+
+                <p>
+                    Planned work includes ANSYS thermal simulations, refinement
+                    of the mechanical design, manufacturing drawings, hardware
+                    fabrication, and subsystem integration. The final system
+                    will be evaluated against the original positioning,
+                    environmental, optical, and integration requirements before
+                    delivery to the sponsor.
+                </p>
+
+                <p class="featured-result">
+                    PLANNED: ANSYS THERMAL SIMULATION · FABRICATION · INTEGRATION
+                </p>
+
             </div>
-
-            <div class="work-item">
-                <div class="work-number">03</div>
-                <div>
-                    <h3>Design Trades</h3>
-                    <p>
-                        Evaluating requirements, cost, schedule,
-                        manufacturability, material selection, and system
-                        integration when making design decisions.
-                    </p>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-number">04</div>
-                <div>
-                    <h3>Fabrication &amp; Prototyping</h3>
-                    <p>
-                        Building early prototypes using 3D printing and planning
-                        final components around available machining
-                        capabilities, including manual milling, turning,
-                        drilling, and sawing.
-                    </p>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-number">05</div>
-                <div>
-                    <h3>Drawings &amp; GD&amp;T</h3>
-                    <p>
-                        Developing manufacturing drawings and applying
-                        dimensioning and GD&amp;T practices to communicate design
-                        requirements to fabrication.
-                    </p>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-number">06</div>
-                <div>
-                    <h3>System Integration</h3>
-                    <p>
-                        Coordinating mechanical interfaces with the optical,
-                        electrical, and software portions of the project to keep
-                        the complete system working toward the same requirements.
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- =========================
-             NEXT STEPS
-             ========================= -->
-
-        <section class="content-section">
-
-            <p class="section-label">
-                08 / NEXT STEPS
-            </p>
-
-            <h2>
-                Analysis &amp; Validation
-            </h2>
-
-            <p>
-                As the mechanical design develops, the next stage is to validate
-                the structure and thermal behavior of the platform through
-                engineering analysis and physical testing.
-            </p>
-
-            <p>
-                Planned work includes ANSYS thermal simulations, refinement of
-                the mechanical design, manufacturing drawings, hardware
-                fabrication, and subsystem integration.
-            </p>
-
-            <p>
-                The final system will be evaluated against the original
-                positioning, environmental, optical, and integration
-                requirements before delivery to the sponsor.
-            </p>
 
         </section>
 
@@ -948,7 +525,7 @@
         <section class="content-section">
 
             <p class="section-label">
-                09 / TOOLS &amp; SKILLS
+                03 / TOOLS &amp; SKILLS
             </p>
 
             <h2>
@@ -984,19 +561,6 @@
             </div>
 
         </section>
-
-
-        <!-- =========================
-             FOOTER
-             ========================= -->
-
-        <div class="footer">
-
-            <a href="../index.html">
-                ← BACK TO PORTFOLIO
-            </a>
-
-        </div>
 
 
     </main>
@@ -1105,8 +669,4 @@
 
 </body>
 
-</html>
-</script>
-    
-</body>
 </html>
